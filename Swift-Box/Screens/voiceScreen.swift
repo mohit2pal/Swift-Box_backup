@@ -41,7 +41,7 @@ struct voiceScreen: View {
                 
                 Spacer()
                 
-                voiceButtons()
+                voiceButtons(option1: "Reply", option2: "Archive", option3: "Delete")
                 
                 Spacer()
                 

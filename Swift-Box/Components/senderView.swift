@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct senderView: View {
+    
+    let senderName: String
+    
     var body: some View {
         HStack {
             
@@ -26,7 +29,7 @@ struct senderView: View {
             VStack(alignment: .leading) {
                 
                 //REXT INC
-                Text("REXT INC").font(.custom("Arial Bold", size: 22.8)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                Text(senderName).font(.custom("Arial Bold", size: 22.8)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 
                 HStack {
                     
@@ -43,5 +46,5 @@ struct senderView: View {
 }
 
 #Preview {
-    senderView()
+    senderView(senderName: "Enrique Gram")
 }

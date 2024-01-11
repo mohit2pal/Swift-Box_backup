@@ -21,7 +21,7 @@ struct openMailScreen: View {
                             .frame(width: 390, height: 140)
                         
                         VStack(alignment: .leading) {
-                            senderView()
+                            senderView(senderName: "REXT INC")
                             
                         }.padding(.leading, -120.0).frame(width: 390, height: 205)
                     }

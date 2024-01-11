@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct voiceButtons: View {
+    
+    let option1: String
+    let option2: String
+    let option3: String
+  
+    
     var body: some View {
         
         HStack {
@@ -19,7 +25,7 @@ struct voiceButtons: View {
                     .frame(width: 109, height: 28)
                 
                 //Reply
-                Text("Reply").font(.custom("Arial Bold", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).lineSpacing(15)
+                Text(option1).font(.custom("Arial Bold", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).lineSpacing(15)
                 
             }
             
@@ -31,7 +37,7 @@ struct voiceButtons: View {
                     .frame(width: 109, height: 28)
                 
                 //Archive
-                Text("Archive").font(.custom("Arial Bold", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).lineSpacing(15)
+                Text(option2).font(.custom("Arial Bold", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).lineSpacing(15)
                 
             }
             
@@ -43,7 +49,7 @@ struct voiceButtons: View {
                     .frame(width: 109, height: 28)
                 
                 //Delete
-                Text("Delete").font(.custom("Arial Bold", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).lineSpacing(15)
+                Text(option3).font(.custom("Arial Bold", size: 10)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).lineSpacing(15)
                 
             }
             
@@ -52,5 +58,6 @@ struct voiceButtons: View {
 }
 
 #Preview {
-    voiceButtons()
+    voiceButtons(option1: "Reply", option2: "Archive", option3: "Delete")
+    
 }

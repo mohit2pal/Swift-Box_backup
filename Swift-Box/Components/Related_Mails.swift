@@ -14,7 +14,7 @@ struct Related_Mails: View {
             //Rectangle 8
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color(#colorLiteral(red: 0.05833333358168602, green: 0.05833333358168602, blue: 0.05833333358168602, alpha: 1)))
-                .frame(width: 380, height: 58.8)
+                .frame(width: 350, height: 58.8)
                 .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.03999999910593033)), radius:20, x:0, y:2)
             VStack(alignment: .leading){
                 
