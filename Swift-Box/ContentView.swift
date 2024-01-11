@@ -9,13 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationSplitView {
-            personalScreen()
-        } detail: {
-            Text("Select the Email To Preview")
-        }
+        
+        loginScreen()
     }
-    
 }
 
 #Preview {

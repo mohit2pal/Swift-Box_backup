@@ -10,56 +10,63 @@ import SwiftUI
 struct summaryScreen: View {
     var body: some View {
         
-        ScrollView {
-            VStack(alignment: .leading) {
-                
-                setting_back()
-                    .padding([.top, .leading, .trailing])
-                profile_pic()
-                    .padding(.top)
-                    .padding(/*@START_MENU_TOKEN@*/.leading, 25.0/*@END_MENU_TOKEN@*/)
-                
-                
-                //All Inboxes
-                Text("All Inboxes").font(.custom("Arial Bold", size: 33.3)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding([.top, .leading]).tracking(-0.53).multilineTextAlignment(.center)
-                
-                
-                searchbar()
-                    .padding(.horizontal)
-                accountsTab()
-                tabView()
-                    .padding(.horizontal)
-                    .padding(.bottom, -9.0)
-                
-                
-                ZStack {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            
+            
+            ScrollView {
+                VStack(alignment: .leading) {
                     
-                    //Rectangle 2
-                    RoundedRectangle(cornerRadius: 27)
-                        .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                        .frame(height: 903)
+                    setting_back()
+                        .padding([.top, .leading, .trailing])
+                    profile_pic()
+                        .padding(.top)
+                        .padding(/*@START_MENU_TOKEN@*/.leading, 25.0/*@END_MENU_TOKEN@*/)
                     
-                    VStack(alignment: .leading) {
-                        //Today
-                        Text("Today").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).padding(.leading, 6.0)
+                    
+                    //All Inboxes
+                    Text("All Inboxes").font(.custom("Arial Bold", size: 33.3)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding([.top, .leading]).tracking(-0.53).multilineTextAlignment(.center)
+                    
+                    
+                    searchbar()
+                        .padding(.horizontal)
+                    accountsTab()
+                    tabView()
+                        .padding(.horizontal)
+                        .padding(.bottom, -9.0)
+                    
+                    
+                    ZStack {
                         
-                        summaryView()
-                        summaryView()
-                        summaryView()
-                        summaryView()
-                        summaryView()
-                        summaryView()
-                        summaryView()
+                        //Rectangle 2
+                        RoundedRectangle(cornerRadius: 27)
+                            .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
+                            .frame(height: 903)
+                        
+                        VStack(alignment: .leading) {
+                            //Today
+                            Text("Today").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).padding(.leading, 6.0)
+                            
+                            summaryView()
+                            summaryView()
+                            summaryView()
+                            summaryView()
+                            summaryView()
+                            summaryView()
+                            summaryView()
+                        }
+                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        
                     }
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal, 1.0)
                     
                 }
-                .padding(.horizontal, 1.0)
                 
             }
             
         }
-
+        .navigationBarHidden(true)
     }
 }
 
