@@ -11,6 +11,8 @@ struct voiceScreen: View {
     var body: some View {
         
         ZStack {
+            Color.black
+                .ignoresSafeArea()
             
             VStack {
                 
@@ -18,12 +20,10 @@ struct voiceScreen: View {
                     //Rectangle 5556
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                        .frame(height: 250)
+                        .frame(height: 200)
                     
                     VStack(alignment: .leading) {
                         
-                        setting_back()
-                            .padding(.bottom, 30.0)
                         
                         
                         //Voice Summary
@@ -33,7 +33,7 @@ struct voiceScreen: View {
                         //Articles about flat Earth theory.
                         Text("Articles about flat Earth \ntheory.").font(.custom("Arial Bold", size: 26.1)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(0.2).lineSpacing(6)
                         
-                    }.padding(.leading, -50.0).frame(width: 390, height: 250)
+                    }.padding(.leading, -50.0).frame(width: 390, height: 200)
                     
                 }
                 
