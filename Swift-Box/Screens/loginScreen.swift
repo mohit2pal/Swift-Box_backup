@@ -42,6 +42,10 @@ struct loginScreen: View {
                     
                     Spacer()
                     
+                    googleSignInButton()
+                        .padding(.horizontal)
+                    Spacer()
+                    
                     //Don’t have an account yet?
                     Text("Don’t have an account yet?").font(.custom("Poppins Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).tracking(-0.36)
                     
@@ -55,5 +59,6 @@ struct loginScreen: View {
 
 #Preview {
     loginScreen()
+        .environmentObject(AuthenticationViewModel())
 }
 
