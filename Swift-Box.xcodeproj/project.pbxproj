@@ -125,9 +125,9 @@
 			children = (
 				7F729C372B57F53F001E79A2 /* Info.plist */,
 				1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */,
-				7F729C442B58127E001E79A2 /* Services */,
 				1768B0312B431C6700C0CAD2 /* ContentView.swift */,
 				7F729C352B57F4D7001E79A2 /* credentials-2.plist */,
+				7F729C442B58127E001E79A2 /* Services */,
 				7F729C3A2B57FD4C001E79A2 /* ViewModel */,
 				170935692B438F3A006D339D /* Screens */,
 				1768B0492B4323DD00C0CAD2 /* Components */,

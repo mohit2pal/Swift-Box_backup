@@ -52,8 +52,17 @@ final class AuthenticationViewModel: ObservableObject {
   func disconnect() {
     authenticator.disconnect()
   }
+    
+    var hasMailScope: Bool {
+        return authorizedScopes.contains(GoogleSignInAuthenticator.mailScope)
+    }
+    
+    func addMailScope(completion: @escaping () -> Void) {
+        authenticator.addMailScope(completion: completion)
+    }
 
 }
+
 
 extension AuthenticationViewModel {
   /// An enumeration representing logged in status.

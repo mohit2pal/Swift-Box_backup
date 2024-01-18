@@ -12,6 +12,8 @@ import GoogleSignIn
 final class GoogleSignInAuthenticator: ObservableObject {
     private var authViewModel: AuthenticationViewModel
     
+    static let mailScope = "https://mail.google.com/"
+    
     /// Creates an instance of this authenticator.
     /// - parameter authViewModel: The view model this authenticator will set logged in status on.
     init(authViewModel: AuthenticationViewModel) {
@@ -67,4 +69,24 @@ final class GoogleSignInAuthenticator: ObservableObject {
         }
     }
     
+    func addMailScope(completion: @escaping () -> Void) {
+        guard let currentUser = GIDSignIn.sharedInstance.currentUser else {
+            fatalError("No user signed in!")
+        }
+        
+        guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else {
+            fatalError("No root view controller!")
+        }
+        
+        currentUser.addScopes([GoogleSignInAuthenticator.mailScope], presenting: rootViewController) { signInResult, error in
+            if let error = error {
+                print("Found error while adding mail scope: \(error).")
+                return
+            }
+            
+            guard let signInResult =  signInResult else { return }
+            self.authViewModel.state = .signedIn(signInResult.user)
+            completion()
+        }
+    }
 }
