@@ -15,10 +15,10 @@ struct sendermail: View {
                 .font(.custom("Inter Medium", size: 18))
                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.4)))
                 .lineSpacing(15)
-                .padding(.leading, 10) // Adjusted leading padding
+                 // Adjusted leading padding
 
             // Ellipse 1
-            Spacer(minLength: 10) // Add spacing to move Ellipse 1 to the right
+            Spacer() // Add spacing to move Ellipse 1 to the right
             Image(uiImage: #imageLiteral(resourceName: "Ellipse 1"))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -48,7 +48,7 @@ struct sendermail: View {
             }
             Spacer() // Add spacer to move Ellipse and Text to the left
         }
-        .padding(.horizontal, 16) // Adjusted horizontal padding
+         // Adjusted horizontal padding
     }
 }
 

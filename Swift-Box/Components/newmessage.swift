@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct NewMessage: View {
+struct newMessage: View {
     var body: some View {
         HStack {
             Image("Arrow")
@@ -16,9 +16,9 @@ struct NewMessage: View {
                 .font(.custom("Inter Medium", size: 16))
                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                 .tracking(0.33)
-                .padding(.leading,10)
+                
             
-            Spacer().frame(width: 10)
+            Spacer()
             // Iconly/Light-Outline/Paper
             Rectangle()
                 .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
@@ -60,7 +60,7 @@ struct NewMessage: View {
 
 struct NewMessage_Previews: PreviewProvider {
     static var previews: some View {
-        NewMessage()
+        newMessage()
     }
 }
 

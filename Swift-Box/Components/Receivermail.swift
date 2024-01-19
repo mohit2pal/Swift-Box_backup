@@ -11,7 +11,7 @@ struct Receivermail: View {
         HStack {
             // To
             Text("To ").font(.custom("Inter Medium", size: 18)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.4))).lineSpacing(15)
-                .padding(.leading,-130)
+                
             
             // Combined View for "Enrique Gram" and "Rectangle 3"
             HStack(spacing: 8) {
@@ -28,7 +28,9 @@ struct Receivermail: View {
             }
             .padding(8)
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
-            .padding(.leading,-80)
+            
+            
+            Spacer()
             
             // Rectangle 17
             Rectangle()
