@@ -1,3 +1,11 @@
+//
+//  composemail.swift
+//  Swift-Box
+//
+//  Created by SHIVANSHU DIXIT on 19/01/24.
+//
+
+
 import SwiftUI
 
 struct composemail: View {
@@ -12,6 +20,7 @@ struct composemail: View {
             VStack {
                 newMessage()
                     .padding(.top)
+                Divider()
                 Receivermail()
                     .padding(.top)
                 sendermail()
