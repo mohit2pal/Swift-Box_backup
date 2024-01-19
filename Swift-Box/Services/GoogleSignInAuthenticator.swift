@@ -12,8 +12,6 @@ import GoogleSignIn
 final class GoogleSignInAuthenticator: ObservableObject {
     private var authViewModel: AuthenticationViewModel
     
-    static let mailScope = "https://mail.google.com/"
-    
     /// Creates an instance of this authenticator.
     /// - parameter authViewModel: The view model this authenticator will set logged in status on.
     init(authViewModel: AuthenticationViewModel) {
@@ -78,7 +76,7 @@ final class GoogleSignInAuthenticator: ObservableObject {
             fatalError("No root view controller!")
         }
         
-        currentUser.addScopes([GoogleSignInAuthenticator.mailScope], presenting: rootViewController) { signInResult, error in
+        currentUser.addScopes([MailLoader.mailScope], presenting: rootViewController) { signInResult, error in
             if let error = error {
                 print("Found error while adding mail scope: \(error).")
                 return

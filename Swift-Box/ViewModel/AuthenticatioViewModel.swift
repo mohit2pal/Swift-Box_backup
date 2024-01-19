@@ -54,7 +54,7 @@ final class AuthenticationViewModel: ObservableObject {
   }
     
     var hasMailScope: Bool {
-        return authorizedScopes.contains(GoogleSignInAuthenticator.mailScope)
+        return authorizedScopes.contains(MailLoader.mailScope)
     }
     
     func addMailScope(completion: @escaping () -> Void) {
