@@ -32,7 +32,11 @@ struct Inboxreply: View {
                 //Lorem ipsum dolor sit amet...
                 HStack{
                     forreply()
+                    Spacer().frame(width:90)
+                    againstreply()
                 }
+                .padding(.top,400)
+                
                     
                 
                 Spacer()
