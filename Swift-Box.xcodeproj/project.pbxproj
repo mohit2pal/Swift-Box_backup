@@ -37,6 +37,9 @@
 		7F3B80842B59A74F007F3961 /* composemail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B80832B59A74F007F3961 /* composemail.swift */; };
 		7F3B80862B59A7B2007F3961 /* newmessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B80852B59A7B2007F3961 /* newmessage.swift */; };
 		7F3B80882B59B001007F3961 /* Receivermail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B80872B59B001007F3961 /* Receivermail.swift */; };
+		7F8998422B5A5E4B00415A4E /* Inboxreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8998412B5A5E4B00415A4E /* Inboxreply.swift */; };
+		7F8998442B5A5EB700415A4E /* forreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8998432B5A5EB700415A4E /* forreply.swift */; };
+		7F8998462B5A605700415A4E /* againstreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8998452B5A605700415A4E /* againstreply.swift */; };
 		7FE5AA8B2B59BF9E003AB97F /* sendermail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5AA8A2B59BF9D003AB97F /* sendermail.swift */; };
 		84A718962B5069FA00D095F8 /* Related_Mails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A718952B5069FA00D095F8 /* Related_Mails.swift */; };
 		84B6B5D52B504D14002826AC /* RelatedMailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B6B5D42B504CE7002826AC /* RelatedMailScreen.swift */; };
@@ -74,6 +77,9 @@
 		7F3B80832B59A74F007F3961 /* composemail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composemail.swift; sourceTree = "<group>"; };
 		7F3B80852B59A7B2007F3961 /* newmessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newmessage.swift; sourceTree = "<group>"; };
 		7F3B80872B59B001007F3961 /* Receivermail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receivermail.swift; sourceTree = "<group>"; };
+		7F8998412B5A5E4B00415A4E /* Inboxreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inboxreply.swift; sourceTree = "<group>"; };
+		7F8998432B5A5EB700415A4E /* forreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forreply.swift; sourceTree = "<group>"; };
+		7F8998452B5A605700415A4E /* againstreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = againstreply.swift; sourceTree = "<group>"; };
 		7FE5AA8A2B59BF9D003AB97F /* sendermail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendermail.swift; sourceTree = "<group>"; };
 		84A718952B5069FA00D095F8 /* Related_Mails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Related_Mails.swift; sourceTree = "<group>"; };
 		84B6B5D42B504CE7002826AC /* RelatedMailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedMailScreen.swift; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 				476FD8BC2B4C6BF300726BBC /* openMailScreen.swift */,
 				17C4C7662B44AC0C00B0641D /* voiceScreen.swift */,
 				7F3B80832B59A74F007F3961 /* composemail.swift */,
+				7F8998412B5A5E4B00415A4E /* Inboxreply.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -166,6 +173,8 @@
 				7F35FF342B59C90D0006BC76 /* subject.swift */,
 				7F35FF362B59CAA40006BC76 /* brief.swift */,
 				7F35FF382B59CB170006BC76 /* composebackground.swift */,
+				7F8998432B5A5EB700415A4E /* forreply.swift */,
+				7F8998452B5A605700415A4E /* againstreply.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -260,10 +269,13 @@
 				1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */,
 				17C4C7692B44AD4C00B0641D /* voiceButtons.swift in Sources */,
 				7F35FF392B59CB170006BC76 /* composebackground.swift in Sources */,
+				7F8998442B5A5EB700415A4E /* forreply.swift in Sources */,
 				17C4C7632B44044100B0641D /* summaryScreen.swift in Sources */,
 				1768B04B2B43243400C0CAD2 /* tabView.swift in Sources */,
 				47C546272B4C6D5A0049DCD2 /* back.swift in Sources */,
+				7F8998422B5A5E4B00415A4E /* Inboxreply.swift in Sources */,
 				1709356B2B438F7D006D339D /* loginScreen.swift in Sources */,
+				7F8998462B5A605700415A4E /* againstreply.swift in Sources */,
 				1709356D2B438FF8006D339D /* accountInputField.swift in Sources */,
 				7FE5AA8B2B59BF9E003AB97F /* sendermail.swift in Sources */,
 				1768B0422B431F4C00C0CAD2 /* setting_back.swift in Sources */,

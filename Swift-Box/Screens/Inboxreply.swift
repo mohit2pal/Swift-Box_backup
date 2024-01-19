@@ -1,14 +1,13 @@
 //
-//  composemail.swift
+//  Inboxreply.swift
 //  Swift-Box
 //
 //  Created by SHIVANSHU DIXIT on 19/01/24.
 //
 
-
 import SwiftUI
 
-struct composemail: View {
+struct Inboxreply: View {
     var body: some View {
         ZStack {
             
@@ -31,7 +30,9 @@ struct composemail: View {
                     .padding(.top)
                 
                 //Lorem ipsum dolor sit amet...
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. \nMaecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac ").font(.custom("Arial Narrow Italic", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding(.top).tracking(-0.33).lineSpacing(21)
+                HStack{
+                    forreply()
+                }
                     
                 
                 Spacer()
@@ -45,6 +46,7 @@ struct composemail: View {
         }
     }
 }
+
 #Preview {
-    composemail()
+    Inboxreply()
 }

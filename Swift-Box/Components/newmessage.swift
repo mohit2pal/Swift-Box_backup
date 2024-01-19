@@ -20,9 +20,7 @@ struct newMessage: View {
             
             Spacer()
             // Iconly/Light-Outline/Paper
-            Rectangle()
-                .fill(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .frame(width: 20, height: 20)
+           Image("file")
                 .padding(.leading,20 )
             
             // Ellipse 14
