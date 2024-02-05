@@ -23,6 +23,8 @@
 		1768B0482B4321A100C0CAD2 /* accountsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B0472B4321A100C0CAD2 /* accountsTab.swift */; };
 		1768B04B2B43243400C0CAD2 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B04A2B43243400C0CAD2 /* tabView.swift */; };
 		1768B04D2B43265000C0CAD2 /* mailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B04C2B43265000C0CAD2 /* mailView.swift */; };
+		17BD69962B71865300F6967F /* MailResponseStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD69952B71865300F6967F /* MailResponseStructure.swift */; };
+		17BD69992B71947F00F6967F /* MailDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD69982B71947F00F6967F /* MailDataViewModel.swift */; };
 		17C4C7632B44044100B0641D /* summaryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C7622B44044100B0641D /* summaryScreen.swift */; };
 		17C4C7652B44316500B0641D /* summaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C7642B44316500B0641D /* summaryView.swift */; };
 		17C4C7672B44AC0C00B0641D /* voiceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C4C7662B44AC0C00B0641D /* voiceScreen.swift */; };
@@ -35,7 +37,7 @@
 		7F729C322B57F465001E79A2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7F729C312B57F465001E79A2 /* GoogleSignIn */; };
 		7F729C342B57F465001E79A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F729C332B57F465001E79A2 /* GoogleSignInSwift */; };
 		7F729C362B57F4D7001E79A2 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F729C352B57F4D7001E79A2 /* credentials-2.plist */; };
-		7F729C392B57FCBD001E79A2 /* AuthenticatioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C382B57FCBD001E79A2 /* AuthenticatioViewModel.swift */; };
+		7F729C392B57FCBD001E79A2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */; };
 		7F729C3C2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C3B2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift */; };
 		7F729C3E2B580344001E79A2 /* googleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C3D2B580344001E79A2 /* googleSignInButton.swift */; };
 		7FA4FB372B5988DF00B7A642 /* MailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA4FB362B5988DF00B7A642 /* MailLoader.swift */; };
@@ -61,6 +63,8 @@
 		1768B0472B4321A100C0CAD2 /* accountsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountsTab.swift; sourceTree = "<group>"; };
 		1768B04A2B43243400C0CAD2 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
 		1768B04C2B43265000C0CAD2 /* mailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailView.swift; sourceTree = "<group>"; };
+		17BD69952B71865300F6967F /* MailResponseStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailResponseStructure.swift; sourceTree = "<group>"; };
+		17BD69982B71947F00F6967F /* MailDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailDataViewModel.swift; sourceTree = "<group>"; };
 		17C4C7622B44044100B0641D /* summaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryScreen.swift; sourceTree = "<group>"; };
 		17C4C7642B44316500B0641D /* summaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summaryView.swift; sourceTree = "<group>"; };
 		17C4C7662B44AC0C00B0641D /* voiceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceScreen.swift; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 		7F3ED3C72B508CDF001A367B /* voiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceButton.swift; sourceTree = "<group>"; };
 		7F729C352B57F4D7001E79A2 /* credentials-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "credentials-2.plist"; sourceTree = "<group>"; };
 		7F729C372B57F53F001E79A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		7F729C382B57FCBD001E79A2 /* AuthenticatioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatioViewModel.swift; sourceTree = "<group>"; };
+		7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		7F729C3B2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInAuthenticator.swift; sourceTree = "<group>"; };
 		7F729C3D2B580344001E79A2 /* googleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleSignInButton.swift; sourceTree = "<group>"; };
 		7FA4FB362B5988DF00B7A642 /* MailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailLoader.swift; sourceTree = "<group>"; };
@@ -126,9 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				7F729C372B57F53F001E79A2 /* Info.plist */,
+				7F729C352B57F4D7001E79A2 /* credentials-2.plist */,
 				1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */,
 				1768B0312B431C6700C0CAD2 /* ContentView.swift */,
-				7F729C352B57F4D7001E79A2 /* credentials-2.plist */,
+				17BD69972B71865B00F6967F /* Model */,
 				7F729C442B58127E001E79A2 /* Services */,
 				7F729C3A2B57FD4C001E79A2 /* ViewModel */,
 				170935692B438F3A006D339D /* Screens */,
@@ -172,10 +177,19 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		17BD69972B71865B00F6967F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17BD69952B71865300F6967F /* MailResponseStructure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7F729C3A2B57FD4C001E79A2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7F729C382B57FCBD001E79A2 /* AuthenticatioViewModel.swift */,
+				7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */,
+				17BD69982B71947F00F6967F /* MailDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,6 +284,7 @@
 				476FD8BD2B4C6BF400726BBC /* openMailScreen.swift in Sources */,
 				170935682B438ECA006D339D /* personalScreen.swift in Sources */,
 				17104A512B43699B00E61F75 /* newDivider.swift in Sources */,
+				17BD69992B71947F00F6967F /* MailDataViewModel.swift in Sources */,
 				84B6B5D52B504D14002826AC /* RelatedMailScreen.swift in Sources */,
 				47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */,
 				17C4C76B2B44AEDD00B0641D /* voiceMail.swift in Sources */,
@@ -281,9 +296,10 @@
 				17104A532B437C1000E61F75 /* notificationDot.swift in Sources */,
 				7F3ED3C82B508CDF001A367B /* voiceButton.swift in Sources */,
 				170935712B4392C7006D339D /* loginButttons.swift in Sources */,
-				7F729C392B57FCBD001E79A2 /* AuthenticatioViewModel.swift in Sources */,
+				7F729C392B57FCBD001E79A2 /* AuthenticationViewModel.swift in Sources */,
 				1768B0322B431C6700C0CAD2 /* ContentView.swift in Sources */,
 				84A718962B5069FA00D095F8 /* Related_Mails.swift in Sources */,
+				17BD69962B71865300F6967F /* MailResponseStructure.swift in Sources */,
 				1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */,
 				17C4C7692B44AD4C00B0641D /* voiceButtons.swift in Sources */,
 				17C4C7632B44044100B0641D /* summaryScreen.swift in Sources */,

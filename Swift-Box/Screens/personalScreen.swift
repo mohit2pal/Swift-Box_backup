@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct personalScreen: View {
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @StateObject var mailDataViewModel = MailDataViewModel()
+    private var user: GIDGoogleUser? {
+      return GIDSignIn.sharedInstance.currentUser
+    }
+    
     var body: some View {
         
         NavigationStack {
@@ -23,6 +30,7 @@ struct personalScreen: View {
                         profile_pic()
                             .padding(.top)
                             .padding(.leading, 25.0)
+                            .onTapGesture(perform: authViewModel.signOut)
                         
                         
                         //All Inboxes
@@ -86,6 +94,19 @@ struct personalScreen: View {
                     }
                     .padding()
                 }
+                .onAppear {
+                    guard self.mailDataViewModel.data != nil else {
+                        if !self.authViewModel.hasMailScope {
+                            self.authViewModel.addMailScope {
+                                self.mailDataViewModel.fetchMail()
+                            }
+                        } else {
+                            self.mailDataViewModel.fetchMail()
+                        }
+                        return
+                    }
+                    print(mailDataViewModel.data ?? "No Data")
+                }
             }
             .navigationBarHidden(true)
         }
@@ -94,4 +115,5 @@ struct personalScreen: View {
 
 #Preview {
     personalScreen()
+        .environmentObject(AuthenticationViewModel())
 }
