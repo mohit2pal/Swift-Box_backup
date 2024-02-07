@@ -69,7 +69,8 @@ final class GoogleSignInAuthenticator: ObservableObject {
     
     func addMailScope(completion: @escaping () -> Void) {
         guard let currentUser = GIDSignIn.sharedInstance.currentUser else {
-            fatalError("No user signed in!")
+//            fatalError("No user signed in!")
+            return
         }
         
         guard let rootViewController = UIApplication.shared.windows.first?.rootViewController else {

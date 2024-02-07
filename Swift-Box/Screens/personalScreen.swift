@@ -93,6 +93,10 @@ struct personalScreen: View {
                         
                     }
                     .padding()
+                    
+                    if let _ = mailDataViewModel.data {
+                        Text(mailDataViewModel.data?.emailAddress ?? "No Email")
+                    } else { Text("No User Signed In") }
                 }
                 .onAppear {
                     guard self.mailDataViewModel.data != nil else {
@@ -105,7 +109,6 @@ struct personalScreen: View {
                         }
                         return
                     }
-                    print(mailDataViewModel.data ?? "No Data")
                 }
             }
             .navigationBarHidden(true)

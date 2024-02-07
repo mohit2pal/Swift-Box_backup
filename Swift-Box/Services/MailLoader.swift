@@ -13,7 +13,7 @@ import GoogleSignIn
 
 final class MailLoader: ObservableObject {
     
-    static let mailScope = "https://www.googleapis.com/auth/gmail.metadata"
+    static let mailScope = "https://mail.google.com/"
     private let baseUrlString = "https://gmail.googleapis.com/gmail/v1/users/me/profile"
     
     private lazy var components: URLComponents? = {
@@ -69,9 +69,7 @@ final class MailLoader: ObservableObject {
                 let mPublisher = authSession.dataTaskPublisher(for: request)
                     .tryMap {data, error -> MailResponseStructure in
                         let decoder = JSONDecoder()
-                        print(decoder)
                         let mailResponse = try decoder.decode(MailResponseStructure.self, from: data)
-                        print(mailResponse)
                         return mailResponse
                     }
                     .mapError {error -> Error in
