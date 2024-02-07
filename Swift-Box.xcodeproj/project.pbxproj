@@ -36,7 +36,7 @@
 		7F3ED3C82B508CDF001A367B /* voiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3ED3C72B508CDF001A367B /* voiceButton.swift */; };
 		7F729C322B57F465001E79A2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7F729C312B57F465001E79A2 /* GoogleSignIn */; };
 		7F729C342B57F465001E79A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F729C332B57F465001E79A2 /* GoogleSignInSwift */; };
-		7F729C362B57F4D7001E79A2 /* credentials-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F729C352B57F4D7001E79A2 /* credentials-2.plist */; };
+		7F729C362B57F4D7001E79A2 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F729C352B57F4D7001E79A2 /* credentials.plist */; };
 		7F729C392B57FCBD001E79A2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */; };
 		7F729C3C2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C3B2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift */; };
 		7F729C3E2B580344001E79A2 /* googleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F729C3D2B580344001E79A2 /* googleSignInButton.swift */; };
@@ -74,7 +74,7 @@
 		47C546262B4C6D5A0049DCD2 /* back.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = back.swift; sourceTree = "<group>"; };
 		47C546282B4C6DF80049DCD2 /* senderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senderView.swift; sourceTree = "<group>"; };
 		7F3ED3C72B508CDF001A367B /* voiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceButton.swift; sourceTree = "<group>"; };
-		7F729C352B57F4D7001E79A2 /* credentials-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "credentials-2.plist"; sourceTree = "<group>"; };
+		7F729C352B57F4D7001E79A2 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		7F729C372B57F53F001E79A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		7F729C3B2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInAuthenticator.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7F729C372B57F53F001E79A2 /* Info.plist */,
-				7F729C352B57F4D7001E79A2 /* credentials-2.plist */,
+				7F729C352B57F4D7001E79A2 /* credentials.plist */,
 				1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */,
 				1768B0312B431C6700C0CAD2 /* ContentView.swift */,
 				17BD69972B71865B00F6967F /* Model */,
@@ -269,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1768B0372B431C6800C0CAD2 /* Preview Assets.xcassets in Resources */,
-				7F729C362B57F4D7001E79A2 /* credentials-2.plist in Resources */,
+				7F729C362B57F4D7001E79A2 /* credentials.plist in Resources */,
 				1768B0342B431C6800C0CAD2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
