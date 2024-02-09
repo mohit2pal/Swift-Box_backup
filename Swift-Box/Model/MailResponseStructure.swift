@@ -17,7 +17,7 @@ struct MailResponseStructure: Codable {
 }
 
 extension MailResponseStructure {
-    enum Erro: Swift.Error {
+    enum Error: Swift.Error {
         
         case noMailInResult
     }
