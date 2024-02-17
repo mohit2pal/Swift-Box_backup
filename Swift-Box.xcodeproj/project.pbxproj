@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170843B92B8067AB00149692 /* ScopeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170843B82B8067AB00149692 /* ScopeStore.swift */; };
 		170935682B438ECA006D339D /* personalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170935672B438ECA006D339D /* personalScreen.swift */; };
 		1709356B2B438F7D006D339D /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709356A2B438F7D006D339D /* loginScreen.swift */; };
 		1709356D2B438FF8006D339D /* accountInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709356C2B438FF8006D339D /* accountInputField.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170843B82B8067AB00149692 /* ScopeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeStore.swift; sourceTree = "<group>"; };
 		170935672B438ECA006D339D /* personalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalScreen.swift; sourceTree = "<group>"; };
 		1709356A2B438F7D006D339D /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		1709356C2B438FF8006D339D /* accountInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountInputField.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				17BD69952B71865300F6967F /* MailResponseStructure.swift */,
+				170843B82B8067AB00149692 /* ScopeStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				7F729C392B57FCBD001E79A2 /* AuthenticationViewModel.swift in Sources */,
 				1768B0322B431C6700C0CAD2 /* ContentView.swift in Sources */,
 				84A718962B5069FA00D095F8 /* Related_Mails.swift in Sources */,
+				170843B92B8067AB00149692 /* ScopeStore.swift in Sources */,
 				17BD69962B71865300F6967F /* MailResponseStructure.swift in Sources */,
 				1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */,
 				17C4C7692B44AD4C00B0641D /* voiceButtons.swift in Sources */,

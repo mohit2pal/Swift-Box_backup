@@ -14,7 +14,7 @@ import GoogleSignIn
 final class MailLoader: ObservableObject {
     
     static let mailScope = "https://mail.google.com/"
-    private let baseUrlString = "https://gmail.googleapis.com/gmail/v1/users/me/profile"
+    private var baseUrlString: String
     
     private lazy var components: URLComponents? = {
         var comps = URLComponents(string: baseUrlString)
@@ -59,6 +59,8 @@ final class MailLoader: ObservableObject {
     
     func mailPublisher(completion: @escaping
                        (AnyPublisher<MailResponseStructure, Error>) -> Void) {
+        print(baseUrlString)
+        print(type(of: baseUrlString))
         sessionWithFreshToken{ [weak self] result in
             switch result {
             case .success(let authSession):
@@ -85,6 +87,10 @@ final class MailLoader: ObservableObject {
                 completion(Fail(error: error).eraseToAnyPublisher())
             }
         }
+    }
+    
+    init(baseUrlString: String) {
+        self.baseUrlString = baseUrlString
     }
 }
 

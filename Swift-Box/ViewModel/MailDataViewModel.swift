@@ -14,9 +14,10 @@ final class MailDataViewModel: ObservableObject {
     @Published private(set) var data: MailResponseStructure?
     
     private var cancellable: AnyCancellable?
-    private let mailLoader = MailLoader()
     
-    func fetchMail() {
+    func fetchMail(baseUrl: String) {
+        let mailLoader = MailLoader(baseUrlString: baseUrl)
+        
         mailLoader.mailPublisher { publisher in self.cancellable = publisher.sink {completion in
             switch completion {
             case .finished:

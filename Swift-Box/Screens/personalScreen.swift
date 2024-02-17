@@ -11,6 +11,8 @@ import GoogleSignIn
 struct personalScreen: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @StateObject var mailDataViewModel = MailDataViewModel()
+    
+    @State private var baseUrl = ScopeStore()
     private var user: GIDGoogleUser? {
       return GIDSignIn.sharedInstance.currentUser
     }
@@ -43,7 +45,6 @@ struct personalScreen: View {
                         tabView()
                             .padding(.horizontal)
                             .padding(.bottom, -9.0)
-                        
                         //Today MailView
                         ZStack {
                             
@@ -102,10 +103,10 @@ struct personalScreen: View {
                     guard self.mailDataViewModel.data != nil else {
                         if !self.authViewModel.hasMailScope {
                             self.authViewModel.addMailScope {
-                                self.mailDataViewModel.fetchMail()
+                                self.mailDataViewModel.fetchMail(baseUrl: baseUrl.profile)
                             }
                         } else {
-                            self.mailDataViewModel.fetchMail()
+                            self.mailDataViewModel.fetchMail(baseUrl: baseUrl.profile)
                         }
                         return
                     }
