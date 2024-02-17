@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170843B92B8067AB00149692 /* ScopeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170843B82B8067AB00149692 /* ScopeStore.swift */; };
+		170843BB2B808C6A00149692 /* StructureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170843BA2B808C6A00149692 /* StructureList.swift */; };
 		170935682B438ECA006D339D /* personalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170935672B438ECA006D339D /* personalScreen.swift */; };
 		1709356B2B438F7D006D339D /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709356A2B438F7D006D339D /* loginScreen.swift */; };
 		1709356D2B438FF8006D339D /* accountInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709356C2B438FF8006D339D /* accountInputField.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		170843B82B8067AB00149692 /* ScopeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeStore.swift; sourceTree = "<group>"; };
+		170843BA2B808C6A00149692 /* StructureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureList.swift; sourceTree = "<group>"; };
 		170935672B438ECA006D339D /* personalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalScreen.swift; sourceTree = "<group>"; };
 		1709356A2B438F7D006D339D /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		1709356C2B438FF8006D339D /* accountInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountInputField.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				17BD69952B71865300F6967F /* MailResponseStructure.swift */,
+				170843BA2B808C6A00149692 /* StructureList.swift */,
 				170843B82B8067AB00149692 /* ScopeStore.swift */,
 			);
 			path = Model;
@@ -296,6 +299,7 @@
 				170935682B438ECA006D339D /* personalScreen.swift in Sources */,
 				17104A512B43699B00E61F75 /* newDivider.swift in Sources */,
 				17BD69992B71947F00F6967F /* MailDataViewModel.swift in Sources */,
+				170843BB2B808C6A00149692 /* StructureList.swift in Sources */,
 				84B6B5D52B504D14002826AC /* RelatedMailScreen.swift in Sources */,
 				47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */,
 				17C4C76B2B44AEDD00B0641D /* voiceMail.swift in Sources */,

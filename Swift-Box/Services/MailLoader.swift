@@ -14,7 +14,7 @@ import GoogleSignIn
 final class MailLoader: ObservableObject {
     
     static let mailScope = "https://mail.google.com/"
-    private var baseUrlString: String
+    let baseUrlString: String
     
     private lazy var components: URLComponents? = {
         var comps = URLComponents(string: baseUrlString)

@@ -12,11 +12,13 @@ import Foundation
 final class MailDataViewModel: ObservableObject {
     
     @Published private(set) var data: MailResponseStructure?
-    
     private var cancellable: AnyCancellable?
     
-    func fetchMail(baseUrl: String) {
-        let mailLoader = MailLoader(baseUrlString: baseUrl)
+    private var baseUrl: String
+    
+    private lazy var mailLoader = MailLoader(baseUrlString: baseUrl)
+    
+    func fetchMail() {
         
         mailLoader.mailPublisher { publisher in self.cancellable = publisher.sink {completion in
             switch completion {
@@ -31,4 +33,9 @@ final class MailDataViewModel: ObservableObject {
            }
         }
     }
+    
+    init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+    
 }

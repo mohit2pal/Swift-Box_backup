@@ -9,15 +9,19 @@ import SwiftUI
 import GoogleSignIn
 
 struct personalScreen: View {
-    @EnvironmentObject var authViewModel: AuthenticationViewModel
-    @StateObject var mailDataViewModel = MailDataViewModel()
     
-    @State private var baseUrl = ScopeStore()
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @StateObject  var mailDataViewModel = MailDataViewModel(baseUrl: ScopeStore().profile)
+    
+    
+    
     private var user: GIDGoogleUser? {
       return GIDSignIn.sharedInstance.currentUser
     }
     
     var body: some View {
+       
+        
         
         NavigationStack {
             ZStack{
@@ -95,7 +99,7 @@ struct personalScreen: View {
                     }
                     .padding()
                     
-                    if let _ = mailDataViewModel.data {
+                    if let _ = self.mailDataViewModel.data {
                         Text(mailDataViewModel.data?.emailAddress ?? "No Email")
                     } else { Text("No User Signed In") }
                 }
@@ -103,10 +107,10 @@ struct personalScreen: View {
                     guard self.mailDataViewModel.data != nil else {
                         if !self.authViewModel.hasMailScope {
                             self.authViewModel.addMailScope {
-                                self.mailDataViewModel.fetchMail(baseUrl: baseUrl.profile)
+                                mailDataViewModel.fetchMail()
                             }
                         } else {
-                            self.mailDataViewModel.fetchMail(baseUrl: baseUrl.profile)
+                            self.mailDataViewModel.fetchMail()
                         }
                         return
                     }
