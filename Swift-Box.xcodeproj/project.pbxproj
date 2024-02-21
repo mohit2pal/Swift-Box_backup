@@ -37,6 +37,11 @@
 		7F3B80842B59A74F007F3961 /* composemail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B80832B59A74F007F3961 /* composemail.swift */; };
 		7F3B80862B59A7B2007F3961 /* newmessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B80852B59A7B2007F3961 /* newmessage.swift */; };
 		7F3B80882B59B001007F3961 /* Receivermail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3B80872B59B001007F3961 /* Receivermail.swift */; };
+		7F76AB5B2B83B86700282EEF /* google.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76AB5A2B83B86700282EEF /* google.swift */; };
+		7F76AB5E2B83C55E00282EEF /* summarytabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76AB5D2B83C55E00282EEF /* summarytabview.swift */; };
+		7F76AB602B84DA3C00282EEF /* workmailview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76AB5F2B84DA3C00282EEF /* workmailview.swift */; };
+		7F76AB622B84E31100282EEF /* WorkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76AB612B84E31100282EEF /* WorkScreen.swift */; };
+		7F76AB642B84E46400282EEF /* worktabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76AB632B84E46400282EEF /* worktabview.swift */; };
 		7F8998422B5A5E4B00415A4E /* Inboxreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8998412B5A5E4B00415A4E /* Inboxreply.swift */; };
 		7F8998442B5A5EB700415A4E /* forreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8998432B5A5EB700415A4E /* forreply.swift */; };
 		7F8998462B5A605700415A4E /* againstreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8998452B5A605700415A4E /* againstreply.swift */; };
@@ -77,6 +82,11 @@
 		7F3B80832B59A74F007F3961 /* composemail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composemail.swift; sourceTree = "<group>"; };
 		7F3B80852B59A7B2007F3961 /* newmessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newmessage.swift; sourceTree = "<group>"; };
 		7F3B80872B59B001007F3961 /* Receivermail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receivermail.swift; sourceTree = "<group>"; };
+		7F76AB5A2B83B86700282EEF /* google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = google.swift; sourceTree = "<group>"; };
+		7F76AB5D2B83C55E00282EEF /* summarytabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = summarytabview.swift; sourceTree = "<group>"; };
+		7F76AB5F2B84DA3C00282EEF /* workmailview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workmailview.swift; sourceTree = "<group>"; };
+		7F76AB612B84E31100282EEF /* WorkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScreen.swift; sourceTree = "<group>"; };
+		7F76AB632B84E46400282EEF /* worktabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worktabview.swift; sourceTree = "<group>"; };
 		7F8998412B5A5E4B00415A4E /* Inboxreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inboxreply.swift; sourceTree = "<group>"; };
 		7F8998432B5A5EB700415A4E /* forreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forreply.swift; sourceTree = "<group>"; };
 		7F8998452B5A605700415A4E /* againstreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = againstreply.swift; sourceTree = "<group>"; };
@@ -102,6 +112,7 @@
 				84B6B5D42B504CE7002826AC /* RelatedMailScreen.swift */,
 				1709356A2B438F7D006D339D /* loginScreen.swift */,
 				170935672B438ECA006D339D /* personalScreen.swift */,
+				7F76AB612B84E31100282EEF /* WorkScreen.swift */,
 				17C4C7622B44044100B0641D /* summaryScreen.swift */,
 				476FD8BC2B4C6BF300726BBC /* openMailScreen.swift */,
 				17C4C7662B44AC0C00B0641D /* voiceScreen.swift */,
@@ -156,12 +167,16 @@
 				1768B0452B43213700C0CAD2 /* searchbar.swift */,
 				1768B0472B4321A100C0CAD2 /* accountsTab.swift */,
 				17104A522B437C1000E61F75 /* notificationDot.swift */,
+				7F76AB632B84E46400282EEF /* worktabview.swift */,
 				1768B04C2B43265000C0CAD2 /* mailView.swift */,
 				17C4C7642B44316500B0641D /* summaryView.swift */,
+				7F76AB5D2B83C55E00282EEF /* summarytabview.swift */,
 				1768B04A2B43243400C0CAD2 /* tabView.swift */,
 				17104A502B43699B00E61F75 /* newDivider.swift */,
 				1709356C2B438FF8006D339D /* accountInputField.swift */,
 				170935702B4392C7006D339D /* loginButttons.swift */,
+				7F76AB5A2B83B86700282EEF /* google.swift */,
+				7F76AB5F2B84DA3C00282EEF /* workmailview.swift */,
 				17C4C7682B44AD4C00B0641D /* voiceButtons.swift */,
 				17C4C76A2B44AEDD00B0641D /* voiceMail.swift */,
 				47C546262B4C6D5A0049DCD2 /* back.swift */,
@@ -256,9 +271,13 @@
 				7F3B80882B59B001007F3961 /* Receivermail.swift in Sources */,
 				47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */,
 				7F3B80842B59A74F007F3961 /* composemail.swift in Sources */,
+				7F76AB602B84DA3C00282EEF /* workmailview.swift in Sources */,
+				7F76AB5E2B83C55E00282EEF /* summarytabview.swift in Sources */,
 				17C4C76B2B44AEDD00B0641D /* voiceMail.swift in Sources */,
 				1768B0442B43201500C0CAD2 /* profile_pic.swift in Sources */,
 				1768B0482B4321A100C0CAD2 /* accountsTab.swift in Sources */,
+				7F76AB622B84E31100282EEF /* WorkScreen.swift in Sources */,
+				7F76AB642B84E46400282EEF /* worktabview.swift in Sources */,
 				1768B0462B43213700C0CAD2 /* searchbar.swift in Sources */,
 				17C4C7652B44316500B0641D /* summaryView.swift in Sources */,
 				17104A532B437C1000E61F75 /* notificationDot.swift in Sources */,
@@ -269,6 +288,7 @@
 				1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */,
 				17C4C7692B44AD4C00B0641D /* voiceButtons.swift in Sources */,
 				7F35FF392B59CB170006BC76 /* composebackground.swift in Sources */,
+				7F76AB5B2B83B86700282EEF /* google.swift in Sources */,
 				7F8998442B5A5EB700415A4E /* forreply.swift in Sources */,
 				17C4C7632B44044100B0641D /* summaryScreen.swift in Sources */,
 				1768B04B2B43243400C0CAD2 /* tabView.swift in Sources */,

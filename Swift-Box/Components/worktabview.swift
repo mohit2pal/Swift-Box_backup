@@ -1,32 +1,34 @@
 //
-//  tabView.swift
+//  worktabview.swift
 //  Swift-Box
 //
-//  Created by Subha on 01/01/24.
+//  Created by user1 on 20/02/24.
 //
 
 import SwiftUI
 
-struct tabView: View {
+struct worktabview: View {
     var body: some View {
         NavigationStack {
             HStack {
                 NavigationLink(destination: personalScreen()) {
-                VStack {
+              
                         
                         //Personal
-                        Text("Personal").font(.custom("Arial Regular", size: 15.7)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.94, alpha: 1))).multilineTextAlignment(.center).padding(.horizontal, 2.0)
+                        Text("Personal").font(.custom("Arial Regular", size: 15.7)).foregroundColor(Color(#colorLiteral(red: 0.67, green: 0.67, blue: 0.67, alpha: 1))).multilineTextAlignment(.center).padding(.horizontal, 2.0)
                         
-                        Image("bar")
-                            .padding(.top, -3.0)
-                    }
-                }
+                        
+              
                 
-                Group {
-                    //Work
-                    
-                    NavigationLink(destination: WorkScreen()) {
-                        Text("Work").font(.custom("Arial Regular", size: 15.7)).foregroundColor(Color(#colorLiteral(red: 0.67, green: 0.67, blue: 0.67, alpha: 1))).multilineTextAlignment(.center).padding(.horizontal, 2.0)
+                    Group {
+                        //Work
+                        
+                        VStack {
+                            Text("Work").font(.custom("Arial Regular", size: 15.7)).foregroundColor(Color(#colorLiteral(red: 0.12, green: 0.37, blue: 0.92, alpha: 1))).multilineTextAlignment(.center).padding(.horizontal, 2.0)
+                            
+                            Image("bar")
+                                .padding(.top, -7.0)
+                        }
                     }
                     
                     NavigationLink(destination: summaryScreen()) {
@@ -47,6 +49,8 @@ struct tabView: View {
     }
 }
 
+
+
 #Preview {
-    tabView()
+    worktabview()
 }
