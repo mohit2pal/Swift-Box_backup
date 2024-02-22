@@ -36,6 +36,7 @@
 		47C546272B4C6D5A0049DCD2 /* back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C546262B4C6D5A0049DCD2 /* back.swift */; };
 		47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C546282B4C6DF80049DCD2 /* senderView.swift */; };
 		7F3ED3C82B508CDF001A367B /* voiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3ED3C72B508CDF001A367B /* voiceButton.swift */; };
+		7F68D0442B860B2A00367F77 /* MessegeDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68D0432B860B2A00367F77 /* MessegeDataViewModel.swift */; };
 		7F729C322B57F465001E79A2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7F729C312B57F465001E79A2 /* GoogleSignIn */; };
 		7F729C342B57F465001E79A2 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F729C332B57F465001E79A2 /* GoogleSignInSwift */; };
 		7F729C362B57F4D7001E79A2 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F729C352B57F4D7001E79A2 /* credentials.plist */; };
@@ -78,6 +79,7 @@
 		47C546262B4C6D5A0049DCD2 /* back.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = back.swift; sourceTree = "<group>"; };
 		47C546282B4C6DF80049DCD2 /* senderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senderView.swift; sourceTree = "<group>"; };
 		7F3ED3C72B508CDF001A367B /* voiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceButton.swift; sourceTree = "<group>"; };
+		7F68D0432B860B2A00367F77 /* MessegeDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessegeDataViewModel.swift; sourceTree = "<group>"; };
 		7F729C352B57F4D7001E79A2 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		7F729C372B57F53F001E79A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */,
 				17BD69982B71947F00F6967F /* MailDataViewModel.swift */,
+				7F68D0432B860B2A00367F77 /* MessegeDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				1709356B2B438F7D006D339D /* loginScreen.swift in Sources */,
 				1709356D2B438FF8006D339D /* accountInputField.swift in Sources */,
 				1768B0422B431F4C00C0CAD2 /* setting_back.swift in Sources */,
+				7F68D0442B860B2A00367F77 /* MessegeDataViewModel.swift in Sources */,
 				1768B04D2B43265000C0CAD2 /* mailView.swift in Sources */,
 				17C4C7672B44AC0C00B0641D /* voiceScreen.swift in Sources */,
 				7FA4FB372B5988DF00B7A642 /* MailLoader.swift in Sources */,

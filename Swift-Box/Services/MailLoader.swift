@@ -59,8 +59,6 @@ final class MailLoader: ObservableObject {
     
     func mailPublisher(completion: @escaping
                        (AnyPublisher<MailResponseStructure, Error>) -> Void) {
-        print(baseUrlString)
-        print(type(of: baseUrlString))
         sessionWithFreshToken{ [weak self] result in
             switch result {
             case .success(let authSession):
@@ -72,6 +70,38 @@ final class MailLoader: ObservableObject {
                     .tryMap {data, error -> MailResponseStructure in
                         let decoder = JSONDecoder()
                         let mailResponse = try decoder.decode(MailResponseStructure.self, from: data)
+                        return mailResponse
+                    }
+                    .mapError {error -> Error in
+                        guard let loaderError = error as? Error else {
+                            return Error.couldNotFetchMail(underlying: error)
+                        }
+                        return loaderError
+                    }
+                    .receive(on: DispatchQueue.main)
+                    .eraseToAnyPublisher()
+                completion(mPublisher)
+            case .failure(let error):
+                completion(Fail(error: error).eraseToAnyPublisher())
+            }
+        }
+    }
+    
+    
+    func mailListPublisher(completion: @escaping
+                           (AnyPublisher<MessegeListStructure, Error>) -> Void) {
+        sessionWithFreshToken{ [weak self] result in
+            switch result {
+            case .success(let authSession):
+                guard let request = self?.request else {
+                    return completion(Fail(error:
+                            .couldNotCreateURLRequest).eraseToAnyPublisher())
+                }
+                let mPublisher = authSession.dataTaskPublisher(for: request)
+                    .tryMap {data, error -> MessegeListStructure in
+                        let decoder = JSONDecoder()
+                        print(data)
+                        let mailResponse = try decoder.decode(MessegeListStructure.self, from: data)
                         return mailResponse
                     }
                     .mapError {error -> Error in

@@ -12,6 +12,7 @@ struct personalScreen: View {
     
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @StateObject  var mailDataViewModel = MailDataViewModel(baseUrl: ScopeStore().profile)
+    @StateObject var messegeDataViewModel = MessegeDataViewModel(baseUrl: ScopeStore().messegesList)
     
     
     
@@ -73,6 +74,18 @@ struct personalScreen: View {
                                 
                             }
                             
+                        }
+                        .onAppear {
+                            guard self.messegeDataViewModel.data != nil else {
+                                if !self.authViewModel.hasMailScope{
+                                    self.authViewModel.addMailScope {
+                                        messegeDataViewModel.fetchMail()
+                                    }
+                                } else {
+                                    self.messegeDataViewModel.fetchMail()
+                                }
+                                return
+                            }
                         }
                         
                         //Yesterday MailView

@@ -16,6 +16,25 @@ struct MailResponseStructure: Codable {
     
 }
 
+struct MessegeListStructure: Codable {
+    
+    var messages = [messageData]()
+    let nextPageToken: String
+    let resultSizeEstimate: Int
+}
+
+struct messageData: Codable {
+    
+    let id: String
+    let threadId: String
+}
+
+extension MessegeListStructure {
+    enum Error: Swift.Error {
+        case noMailInResult
+    }
+}
+
 extension MailResponseStructure {
     enum Error: Swift.Error {
         
