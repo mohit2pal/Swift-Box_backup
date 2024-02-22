@@ -6,9 +6,23 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct personalScreen: View {
+    
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @StateObject  var mailDataViewModel = MailDataViewModel(baseUrl: ScopeStore().profile)
+    @StateObject var messegeDataViewModel = MessegeDataViewModel(baseUrl: ScopeStore().messegesList)
+    
+    
+    
+    private var user: GIDGoogleUser? {
+      return GIDSignIn.sharedInstance.currentUser
+    }
+    
     var body: some View {
+       
+        
         
         NavigationStack {
             ZStack{
@@ -23,6 +37,7 @@ struct personalScreen: View {
                         profile_pic()
                             .padding(.top)
                             .padding(.leading, 25.0)
+                            .onTapGesture(perform: authViewModel.signOut)
                         
                         
                         //All Inboxes
@@ -35,7 +50,6 @@ struct personalScreen: View {
                         tabView()
                             .padding(.horizontal)
                             .padding(.bottom, -9.0)
-                        
                         //Today MailView
                         ZStack {
                             
@@ -61,6 +75,18 @@ struct personalScreen: View {
                             }
                             
                         }
+                        .onAppear {
+                            guard self.messegeDataViewModel.data != nil else {
+                                if !self.authViewModel.hasMailScope{
+                                    self.authViewModel.addMailScope {
+                                        messegeDataViewModel.fetchMail()
+                                    }
+                                } else {
+                                    self.messegeDataViewModel.fetchMail()
+                                }
+                                return
+                            }
+                        }
                         
                         //Yesterday MailView
                         ZStack{
@@ -85,6 +111,22 @@ struct personalScreen: View {
                         
                     }
                     .padding()
+                    
+                    if let _ = self.mailDataViewModel.data {
+                        Text(mailDataViewModel.data?.emailAddress ?? "No Email")
+                    } else { Text("No User Signed In") }
+                }
+                .onAppear {
+                    guard self.mailDataViewModel.data != nil else {
+                        if !self.authViewModel.hasMailScope {
+                            self.authViewModel.addMailScope {
+                                mailDataViewModel.fetchMail()
+                            }
+                        } else {
+                            self.mailDataViewModel.fetchMail()
+                        }
+                        return
+                    }
                 }
             }
             .navigationBarHidden(true)
@@ -94,4 +136,5 @@ struct personalScreen: View {
 
 #Preview {
     personalScreen()
+        .environmentObject(AuthenticationViewModel())
 }

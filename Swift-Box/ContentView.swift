@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    
     var body: some View {
-        
-        loginScreen()
+        return Group {
+            NavigationView {
+                switch authViewModel.state {
+                case .signedIn:
+                    personalScreen()
+                case.signedOut:
+                    loginScreen()
+                }
+            }
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(AuthenticationViewModel())
 }

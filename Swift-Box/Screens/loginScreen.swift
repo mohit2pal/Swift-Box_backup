@@ -22,10 +22,10 @@ struct loginScreen: View {
                     //Welcome back, Varun!
                     Text("Welcome back, Varun!").font(.custom("Poppins SemiBold", size: 45))
                         .fontWeight(.bold)
-                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding(/*@START_MENU_TOKEN@*/.horizontal, 11.0/*@END_MENU_TOKEN@*/).tracking(-0.36)
+                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding(.horizontal, 11.0).tracking(-0.36)
                         .frame(width: 320 ,alignment: .leading)
-                        .padding(/*@START_MENU_TOKEN@*/.bottom, 20.0/*@END_MENU_TOKEN@*/)
-                        .padding(/*@START_MENU_TOKEN@*/.top, 100.0/*@END_MENU_TOKEN@*/)
+                        .padding(.bottom, 20.0)
+                        .padding(.top, 100.0)
                     
                     accountInputField(field: "Username")
                         .padding(.vertical)
@@ -37,9 +37,13 @@ struct loginScreen: View {
                     
                     NavigationLink(destination: personalScreen()){
                         loginButttons()
-
+                        
                     }
                     
+                    Spacer()
+                    
+                    googleSignInButton()
+                        .padding(.horizontal)
                     Spacer()
                     
                     //Don’t have an account yet?
@@ -55,5 +59,6 @@ struct loginScreen: View {
 
 #Preview {
     loginScreen()
+        .environmentObject(AuthenticationViewModel())
 }
 
