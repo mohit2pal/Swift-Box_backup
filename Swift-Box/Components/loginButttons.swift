@@ -10,11 +10,18 @@ import SwiftUI
 struct loginButttons: View {
     var body: some View {
         
-        VStack {
-            Image("FixedApple")
-            Image("FixedGoogle")
-            Image("Fixedfacebook")
-        }
+        HStack
+                {
+                    Image("Apple login")
+                    Spacer().frame(width: 50)
+                    Image("Google login")
+                    Spacer().frame(width: 50)
+                    Image("Facebook login")
+                    
+                    
+                                        
+                    
+                }
     }
 }
 

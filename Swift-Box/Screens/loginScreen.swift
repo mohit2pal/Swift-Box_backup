@@ -20,20 +20,27 @@ struct loginScreen: View {
                 VStack {
                     
                     //Welcome back, Varun!
-                    Text("Welcome back, Varun!").font(.custom("Poppins SemiBold", size: 45))
+                    Text("Welcome back, Varun!").font(.custom(" Arial Bold", size: 45))
                         .fontWeight(.bold)
                         .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding(.horizontal, 11.0).tracking(-0.36)
                         .frame(width: 320 ,alignment: .leading)
                         .padding(.bottom, 20.0)
                         .padding(.top, 100.0)
                     
-                    accountInputField(field: "Username")
-                        .padding(.vertical)
-                    accountInputField(field: "Password")
+                    Spacer()
+                                    
+                                        Image("LOGO")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 100, height: 100)
+                                        Spacer()
+                    
+
                     
                     
-                    //OR
-                    Text("OR").font(.custom("Poppins Bold", size: 25)).fontWeight(.heavy).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding(.vertical, 4.0)
+                    Text("Sign in to SwiftBox").font(.custom("Arial Bold", size: 25)).fontWeight(.heavy).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding(.vertical, 4.0)
+                                        
+                                        Spacer().frame(height: 50)
                     
                     NavigationLink(destination: personalScreen()){
                         loginButttons()

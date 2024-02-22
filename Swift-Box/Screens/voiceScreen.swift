@@ -37,7 +37,7 @@ struct voiceScreen: View {
                     
                 }
                 
-                Image("Siri").resizable().padding(/*@START_MENU_TOKEN@*/).frame(width: 345.0, height: 220.0)
+                Image("Siri").resizable().padding(.all).frame(width: 345.0, height: 220.0)
                 
                 Spacer()
                 
