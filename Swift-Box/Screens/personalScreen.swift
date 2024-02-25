@@ -12,9 +12,6 @@ struct personalScreen: View {
     
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @StateObject  var mailDataViewModel = MailDataViewModel(baseUrl: ScopeStore().profile)
-    @StateObject var messegeDataViewModel = MessegeDataViewModel(baseUrl: ScopeStore().messegesList)
-    
-    
     
     private var user: GIDGoogleUser? {
       return GIDSignIn.sharedInstance.currentUser
@@ -75,18 +72,6 @@ struct personalScreen: View {
                             }
                             
                         }
-                        .onAppear {
-                            guard self.messegeDataViewModel.data != nil else {
-                                if !self.authViewModel.hasMailScope{
-                                    self.authViewModel.addMailScope {
-                                        messegeDataViewModel.fetchMail()
-                                    }
-                                } else {
-                                    self.messegeDataViewModel.fetchMail()
-                                }
-                                return
-                            }
-                        }
                         
                         //Yesterday MailView
                         ZStack{
@@ -115,6 +100,10 @@ struct personalScreen: View {
                     if let _ = self.mailDataViewModel.data {
                         Text(mailDataViewModel.data?.emailAddress ?? "No Email")
                     } else { Text("No User Signed In") }
+                    
+                    ForEach(self.mailDataViewModel.emails) { email in
+                        Text(email.threadId)
+                    }
                 }
                 .onAppear {
                     guard self.mailDataViewModel.data != nil else {

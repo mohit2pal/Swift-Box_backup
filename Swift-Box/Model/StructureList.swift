@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Emails: Identifiable {
+    let id = UUID()
+    var rawEmail = [MessageStructure]()
+}
