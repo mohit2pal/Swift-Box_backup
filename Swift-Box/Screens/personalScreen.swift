@@ -53,18 +53,20 @@ struct personalScreen: View {
                             //Rectangle 2
                             RoundedRectangle(cornerRadius: 27)
                                 .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                                .frame(height: 325)
+                                .frame(height: (100 + CGFloat((mailDataViewModel.emails.count*80))))
                             
                             
                             VStack(alignment: .leading) {
                                 Text("Today, ").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).padding(.leading)
                                 
                                 Group {
-                                    NavigationLink(destination: openMailScreen()) {
-                                        mailView()
+                                    ForEach(self.mailDataViewModel.emails) { email in
+                                        NavigationLink {
+                                            openMailScreen(email: email)
+                                        } label: {
+                                            mailView(email: email)
+                                        }
                                     }
-                                    mailView()
-                                    mailView()
                                 }
                                 .padding(.top, 5)
                                 .padding(.leading)
@@ -83,13 +85,13 @@ struct personalScreen: View {
                             VStack(alignment: .leading) {
                                 Text("Yesterday").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).padding(.leading)
                                 
-                                Group {
-                                    mailView()
-                                    mailView()
-                                    mailView()
-                                }
-                                .padding(.top, 5)
-                                .padding(.leading)
+//                                Group {
+//                                    mailView()
+//                                    mailView()
+//                                    mailView()
+//                                }
+//                                .padding(.top, 5)
+//                                .padding(.leading)
                                 
                             }
                         }
@@ -101,9 +103,6 @@ struct personalScreen: View {
                         Text(mailDataViewModel.data?.emailAddress ?? "No Email")
                     } else { Text("No User Signed In") }
                     
-                    ForEach(self.mailDataViewModel.emails) { email in
-                        Text(email.threadId)
-                    }
                 }
                 .onAppear {
                     guard self.mailDataViewModel.data != nil else {

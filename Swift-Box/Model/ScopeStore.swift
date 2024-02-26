@@ -10,6 +10,6 @@ import Foundation
 struct ScopeStore: Identifiable {
     var id = UUID()
     var profile = "https://gmail.googleapis.com/gmail/v1/users/me/profile"
-    var messegesList = "https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=5"
+    var messegesList = "https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10"
     var messegesGet = "https://gmail.googleapis.com/gmail/v1/users/me/messages/"
 }

@@ -49,10 +49,11 @@ struct WorkScreen: View {
                                 Text("Today, ").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).padding(.leading)
                                 
                                 Group {
-                                    NavigationLink(destination: openMailScreen()) {
-                                        workmailview()
-                                        
-                                    }
+//                                    NavigationLink(destination: openMailScreen()) {
+//                                        workmailview()
+//                                        
+//                                    }
+                                         workmailview()
                                          workmailview()
                                          workmailview()
                                 }

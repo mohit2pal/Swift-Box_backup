@@ -10,6 +10,7 @@ import SwiftUI
 struct senderView: View {
     
     let senderName: String
+    let user: String
     
     var body: some View {
         HStack {
@@ -22,7 +23,7 @@ struct senderView: View {
                     .frame(width: 68, height: 69)
                 
                 //REXT INC
-                Text("REXT\nINC").font(.headline).fontWeight(.black).foregroundColor(Color.black).tracking(-0.67)
+                Text("REXT\nINC").font(.headline).fontWeight(.black).foregroundColor(Color.black)
                 
             }
             
@@ -37,7 +38,7 @@ struct senderView: View {
                     Text("To:").font(.custom("Arial Regular", size: 22.8)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                     
                     //sender
-                    Text("Esther Muzo").font(.custom("Arial Regular", size: 20)).foregroundColor(Color(#colorLiteral(red: 0.63, green: 0.63, blue: 0.63, alpha: 1)))
+                    Text(user).font(.custom("Arial Regular", size: 20)).foregroundColor(Color(#colorLiteral(red: 0.63, green: 0.63, blue: 0.63, alpha: 1)))
                 }
                 
             }
@@ -46,5 +47,5 @@ struct senderView: View {
 }
 
 #Preview {
-    senderView(senderName: "Enrique Gram")
+    senderView(senderName: "Enrique Gram", user: "Esther Muzo")
 }

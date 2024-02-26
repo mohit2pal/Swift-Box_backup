@@ -58,7 +58,7 @@ struct PayLoad: Codable {
     let mimeType: String
     let filename: String
     var headers = [EachHeader]()
-    let body: Body
+    let body: MessageBody
     let parts: [Part]?
 }
 
@@ -73,7 +73,7 @@ struct Part: Codable {
 
 struct MessageBody: Codable {
     let size: Int
-    let data: String
+    let data: String?
 }
 
 struct EachHeader: Codable {
