@@ -18,8 +18,11 @@ struct WorkScreen: View {
                 ScrollView {
                     
                     VStack(alignment: .leading) {
-                        setting_back()
-                            .padding([.top, .leading, .trailing])
+                        NavigationLink(destination: SettingsView()) {
+                            
+                            setting_back()
+                                .padding([.top, .leading, .trailing])
+                        }
                         profile_pic()
                             .padding(.top)
                             .padding(.leading, 25.0)
@@ -60,6 +63,7 @@ struct WorkScreen: View {
                                 .padding(.leading)
                                 
                             }
+                            .offset(y:-5)
                             
                         }
                         

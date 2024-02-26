@@ -42,10 +42,13 @@ struct summaryView: View {
                     //43 Mins Ago
                     Text("43 Mins Ago").font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.trailing).opacity(0.6)
                     
-                    Spacer()
+                
                     
-                    //TestPedia
-                    Text("TestPedia").font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.trailing).opacity(0.6)
+                    NavigationLink(destination: voiceScreen()) {
+                        Siri()
+                        
+                    }
+                        
                     
                 }
                 .padding(.horizontal)

@@ -9,20 +9,25 @@ import SwiftUI
 
 struct subject: View {
     var body: some View {
-        HStack{
-            Text("Subject ").font(.custom("Inter Medium", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.4))).lineSpacing(15)
-                
-            Spacer()
+        HStack {
+            Text("Subject: ")
+                .font(.custom("Inter Medium", size: 20))
+                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6)))
+               
             
             Text("Articles about flat earth theory")
-                .font(.system(size: 14))
+                .font(.system(size: 16))
+                .foregroundColor(Color.white)
                 .multilineTextAlignment(.leading)
-                .frame(width: 300, alignment: .leading) // You can adjust the size as needed
-                // Add other modifiers or styling if necessary
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.horizontal)
+        .offset(x:32)
     }
 }
 
-#Preview {
-    subject()
+struct subject_Previews: PreviewProvider {
+    static var previews: some View {
+        subject()
+    }
 }

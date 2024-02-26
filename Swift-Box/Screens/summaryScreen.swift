@@ -18,9 +18,11 @@ struct summaryScreen: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     
-                    setting_back()
-                        .padding([.top, .leading, .trailing])
-                        .offset(y: 15)
+                    NavigationLink(destination: SettingsView()) {
+                        
+                        setting_back()
+                            .padding([.top, .leading, .trailing])
+                    }
 
                     profile_pic()
                         .padding(.top)
@@ -53,7 +55,7 @@ struct summaryScreen: View {
                         RoundedRectangle(cornerRadius: 27)
                             .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
                             .frame(height: 1000)
-                            .offset(y:-5)
+                            .offset(y:-2)
                         
                         VStack(alignment: .leading) {
                             //Today
