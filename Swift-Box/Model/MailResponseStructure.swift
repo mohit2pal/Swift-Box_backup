@@ -29,6 +29,62 @@ struct messageData: Codable {
     let threadId: String
 }
 
+//struct MessageStructure: Codable, Identifiable {        For RAW
+//
+//    let id: String
+//    let threadId: String
+//    var labelIds = [String]()
+//    let snippet: String
+//    let sizeEstimate: Int
+//    let raw: String
+//    let historyId: String
+//    let internalDate: String
+//}
+
+struct MessageStructure: Codable, Identifiable {
+    let id: String
+    let threadId: String
+    var labelIds = [String]()
+    let snippet: String
+    let payload: PayLoad
+    let sizeEstimate: Int
+    let historyId: String
+    let internalDate: String
+    
+}
+
+struct PayLoad: Codable {
+    let partId: String
+    let mimeType: String
+    let filename: String
+    var headers = [EachHeader]()
+    let body: MessageBody
+    let parts: [Part]?
+}
+
+struct Part: Codable {
+    let partId: String
+    let mimeType: String
+    let filename: String
+    var headers = [EachHeader]()
+    let body: MessageBody
+    
+}
+
+struct MessageBody: Codable {
+    let size: Int
+    let data: String?
+}
+
+struct EachHeader: Codable {
+    let name: String
+    let value: String
+}
+
+struct Body: Codable {
+    let size: Int
+}
+
 extension MessegeListStructure {
     enum Error: Swift.Error {
         case noMailInResult
@@ -37,7 +93,12 @@ extension MessegeListStructure {
 
 extension MailResponseStructure {
     enum Error: Swift.Error {
-        
+        case noMailInResult
+    }
+}
+
+extension MessageStructure {
+    enum Error: Swift.Error {
         case noMailInResult
     }
 }

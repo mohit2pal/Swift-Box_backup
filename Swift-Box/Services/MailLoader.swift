@@ -87,22 +87,30 @@ final class MailLoader: ObservableObject {
         }
     }
     
-    
-    func mailListPublisher(completion: @escaping
-                           (AnyPublisher<MessegeListStructure, Error>) -> Void) {
-        sessionWithFreshToken{ [weak self] result in
+    func fetchMailIds(urlString: String, completion: @escaping(AnyPublisher<MessegeListStructure, Error>) -> Void) {
+        
+        let fetchcomponents: URLComponents? = {
+            let comps = URLComponents(string: urlString)
+            return comps
+        }()
+        
+        let fetchrequest: URLRequest? = {
+            guard let components = fetchcomponents, let url = components.url else { return nil }
+            return URLRequest(url: url)
+        }()
+        
+        sessionWithFreshToken { result in
             switch result {
-            case .success(let authSession):
-                guard let request = self?.request else {
+            case.success(let authSession):
+                guard let request = fetchrequest else {
                     return completion(Fail(error:
                             .couldNotCreateURLRequest).eraseToAnyPublisher())
                 }
-                let mPublisher = authSession.dataTaskPublisher(for: request)
+                let fPublisher = authSession.dataTaskPublisher(for: request)
                     .tryMap {data, error -> MessegeListStructure in
                         let decoder = JSONDecoder()
-                        print(data)
-                        let mailResponse = try decoder.decode(MessegeListStructure.self, from: data)
-                        return mailResponse
+                        let fetchResponse = try decoder.decode(MessegeListStructure.self, from: data)
+                        return fetchResponse
                     }
                     .mapError {error -> Error in
                         guard let loaderError = error as? Error else {
@@ -112,12 +120,53 @@ final class MailLoader: ObservableObject {
                     }
                     .receive(on: DispatchQueue.main)
                     .eraseToAnyPublisher()
-                completion(mPublisher)
+                completion(fPublisher)
             case .failure(let error):
                 completion(Fail(error: error).eraseToAnyPublisher())
             }
         }
     }
+    
+    func fetchMessage(urlString: String, id: String, completion: @escaping(AnyPublisher<MessageStructure, Error>) -> Void) {
+        let fetchmessagecomponents: URLComponents? = {
+            let comps = URLComponents(string: (urlString + id + "?format=full"))
+            return comps
+        }()
+        
+        let fetchmessagerequest: URLRequest? = {
+            guard let components = fetchmessagecomponents, let url = components.url else { return nil }
+            return URLRequest(url: url)
+        }()
+        
+        sessionWithFreshToken { result in
+            switch result {
+            case.success(let authSession):
+                guard let request = fetchmessagerequest else {
+                    return completion(Fail(error:
+                            .couldNotCreateURLRequest).eraseToAnyPublisher())
+                }
+                let fPublisher = authSession.dataTaskPublisher(for: request)
+                    .tryMap {data, error -> MessageStructure in
+                        //print(String(data: data, encoding: .utf8))
+                        let decoder = JSONDecoder()
+                        let fetchResponse = try decoder.decode(MessageStructure.self, from: data)
+                        return fetchResponse
+                    }
+                    .mapError {error -> Error in
+                        guard let loaderError = error as? Error else {
+                            return Error.couldNotFetchMail(underlying: error)
+                        }
+                        return loaderError
+                    }
+                    .receive(on: DispatchQueue.main)
+                    .eraseToAnyPublisher()
+                completion(fPublisher)
+            case .failure(let error):
+                completion(Fail(error: error).eraseToAnyPublisher())
+            }
+        }
+    }
+    
     
     init(baseUrlString: String) {
         self.baseUrlString = baseUrlString

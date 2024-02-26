@@ -29,7 +29,7 @@ struct RelatedMailScreen: View {
                             
                             
                             VStack{
-                                senderView(senderName: "Enrique Gram")
+                                senderView(senderName: "Enrique Gram", user: "Mohit")
                                     .padding(.leading, -120.0).frame(width: 390, height: 205)
                                     .offset(y : -10)
                                 //Articles about flat Earth theory.
