@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Siri.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "SiriIcon512-1-120x120@2x 2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

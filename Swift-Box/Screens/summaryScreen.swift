@@ -18,9 +18,10 @@ struct summaryScreen: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     
-                    setting_back()
-                        .padding([.top, .leading, .trailing])
-                        .offset(y: 15)
+                    NavigationLink(destination: SettingsView()) {
+                        setting_back()
+                            .padding([.top, .leading, .trailing])
+                    }
 
                     profile_pic()
                         .padding(.top)

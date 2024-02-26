@@ -13,6 +13,7 @@ struct personalScreen: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @StateObject  var mailDataViewModel = MailDataViewModel(baseUrl: ScopeStore().profile)
     
+    
     private var user: GIDGoogleUser? {
       return GIDSignIn.sharedInstance.currentUser
     }
@@ -29,8 +30,11 @@ struct personalScreen: View {
                 ScrollView {
                     
                     VStack(alignment: .leading) {
-                        setting_back()
-                            .padding([.top, .leading, .trailing])
+                        
+                        NavigationLink(destination: SettingsView()) {
+                            setting_back()
+                                .padding([.top, .leading, .trailing])
+                        }
                         profile_pic()
                             .padding(.top)
                             .padding(.leading, 25.0)
@@ -46,7 +50,7 @@ struct personalScreen: View {
                         accountsTab()
                         tabView()
                             .padding(.horizontal)
-                            .padding(.bottom, -9.0)
+                            .padding(.bottom, -10.0)
                         //Today MailView
                         ZStack {
                             
@@ -54,7 +58,7 @@ struct personalScreen: View {
                             RoundedRectangle(cornerRadius: 27)
                                 .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
                                 .frame(height: (100 + CGFloat((mailDataViewModel.emails.count*80))))
-                            
+                                .offset(y:5)
                             
                             VStack(alignment: .leading) {
                                 Text("Today, ").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).padding(.leading)
@@ -72,7 +76,7 @@ struct personalScreen: View {
                                 .padding(.leading)
                                 
                             }
-                            
+                            .offset(y:5)
                         }
                         
                         //Yesterday MailView

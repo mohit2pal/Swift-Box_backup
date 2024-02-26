@@ -2,13 +2,16 @@
 //  voiceScreen.swift
 //  Swift-Box
 //
-//  Created by SHIVANSHU DIXIT on 09/01/24.
+//  Created by SHIVANSHU DIXIT on 20/02/24.
 //
 
 import SwiftUI
 
 struct voiceScreen: View {
+    @State var showSplitSheet: Bool = false
+
     var body: some View {
+
         
         ZStack {
             Color.black
@@ -37,11 +40,19 @@ struct voiceScreen: View {
                     
                 }
                 
-                Image("Siri").resizable().padding(.all).frame(width: 345.0, height: 220.0)
+                Image("Siri").resizable().padding(.all).frame(width: 220.0, height: 220.0)
+                    .offset(y:30)
                 
                 Spacer()
+             
                 
-                voiceButtons(option1: "Reply", option2: "Archive", option3: "Delete")
+                Button(action: {
+                    showSplitSheet = true
+                }, label: {
+                    voiceButtons(option1: "Reply", option2: "Reply All", option3: "Forward")
+                })
+                    
+                   
                 
                 Spacer()
                 
@@ -50,6 +61,10 @@ struct voiceScreen: View {
                     .padding(.horizontal)
             }
         }
+        .sheet(isPresented: $showSplitSheet,
+               content: {
+            composemail()
+        })
     }
 }
 

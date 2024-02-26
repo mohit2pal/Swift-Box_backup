@@ -18,8 +18,11 @@ struct WorkScreen: View {
                 ScrollView {
                     
                     VStack(alignment: .leading) {
-                        setting_back()
-                            .padding([.top, .leading, .trailing])
+                        NavigationLink(destination: SettingsView()) {
+                            
+                            setting_back()
+                                .padding([.top, .leading, .trailing])
+                        }
                         profile_pic()
                             .padding(.top)
                             .padding(.leading, 25.0)
@@ -48,8 +51,8 @@ struct WorkScreen: View {
                             VStack(alignment: .leading) {
                                 Text("Today, ").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).padding(.leading)
                                 
-                                Group {
-//                                    NavigationLink(destination: openMailScreen()) {
+//                                Group {
+//                                    NavigationLink(destination: openMailScreen(email: <#T##MessageStructure#>)) {
 //                                        workmailview()
 //                                        
 //                                    }
@@ -61,6 +64,7 @@ struct WorkScreen: View {
                                 .padding(.leading)
                                 
                             }
+                            .offset(y:-5)
                             
                         }
                         
@@ -92,7 +96,7 @@ struct WorkScreen: View {
             .navigationBarHidden(true)
         }
     }
-    }
+
 
 
 

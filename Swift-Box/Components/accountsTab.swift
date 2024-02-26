@@ -11,64 +11,82 @@ struct accountsTab: View {
     var body: some View {
             HStack {
                 
-                VStack{
-                    
-                    ZStack{
+                
+                Button(action: {
+                                            // Action to add recipient
+                                        })
+                {
+                    VStack{
                         
-                        //Ellipse 4
-                        Circle()
-                            .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                            .frame(width: 50, height: 50)
+                        ZStack{
+                            
+                            //Ellipse 4
+                            Circle()
+                                .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
+                                .frame(width: 50, height: 50)
+                            
+                            Image("Vector").resizable().frame(width: 18.0, height: 23.0)
+                            
+                            notificationDot(count: 4)
+                                .padding([.leading, .bottom], 35.0)
+                            
+                        }
                         
-                        Image("Vector").resizable().frame(width: 18.0, height: 23.0)
-                        
-                        notificationDot(count: 4)
-                            .padding([.leading, .bottom], 35.0)
-                        
+                        Text("iCloud")
+                            .foregroundColor(Color.white)
                     }
-                    
-                    Text("iCloud")
-                        .foregroundColor(Color.white)
                 }
                 .padding(/*@START_MENU_TOKEN@*/.trailing/*@END_MENU_TOKEN@*/)
                 
-                VStack{
-                    
-                    ZStack{
+                Button(action: {
+                                            // Action to add recipient
+                                        })
+                {
+                    VStack{
                         
-                        //Ellipse 3
-                        Circle()
-                            .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                            .frame(width: 50, height: 50)
+                        ZStack{
+                            
+                            //Ellipse 3
+                            Circle()
+                                .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
+                                .frame(width: 50, height: 50)
+                            
+                            Image("google").resizable().frame(width: 23.0, height: 23.0)
+                            
+                            notificationDot(count: 8)
+                                .padding([.leading, .bottom], 35.0)
+                            
+                        }
                         
-                        Image("google").resizable().frame(width: 23.0, height: 23.0)
-                        
-                        notificationDot(count: 8)
-                            .padding([.leading, .bottom], 35.0)
+                        Text("GMail")
+                            .foregroundColor(Color.white)
                         
                     }
-                    
-                    Text("GMail")
-                        .foregroundColor(Color.white)
-                    
                 }
                 .padding(.trailing)
                 
-                VStack{
-                    ZStack{
+                
+                Button(action: {
+                                            // Action to add recipient
+                                        })
+                {
+                    
+                    VStack{
+                        ZStack{
+                            
+                            //Ellipse 2
+                            Circle()
+                                .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
+                                .frame(width: 50, height: 50)
+                            
+                            Image("addMore").resizable().frame(width: 23.0, height: 23.0)
+                            
+                        }
                         
-                        //Ellipse 2
-                        Circle()
-                            .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                            .frame(width: 50, height: 50)
-                        
-                        Image("addMore").resizable().frame(width: 23.0, height: 23.0)
+                        Text("Add")
+                            .foregroundColor(Color.black)
                         
                     }
-                    
-                    Text("Add")
-                        .foregroundColor(Color.black)
-                    
                 }
             }
             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)

@@ -12,45 +12,66 @@ struct newMessage: View {
             Spacer().frame(width: 10)
             // New Message
             Text("New Message")
-                .font(.custom("Inter Medium", size: 19))
+                .font(.custom("Arial Bold", size: 20))
                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .tracking(0.33)
+                
                 
             
             Spacer()
             // Iconly/Light-Outline/Paper
-           Image("file")
-                .padding(.leading,20 )
+            Button(action: {
+                // Action to perform when the button is tapped
+            })
+            {
+                Image(systemName: "doc")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.white)
+                    .padding(.leading, 20)
+                
+            }
+            Spacer().frame(width: 15)
+           
             
-            // Ellipse 14
-            Circle()
-                .strokeBorder(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), lineWidth: 1.2)
-                .frame(width: 3.3, height: 3.3)
-                .padding(.trailing, 4)
             
-            Circle()
-                .strokeBorder(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), lineWidth: 1.2)
-                .frame(width: 3.3, height: 3.3)
-                .padding(.trailing, 4)
-            
-            Circle()
-                .strokeBorder(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), lineWidth: 1.2)
-                .frame(width: 3.3, height: 3.3)
-            
+            Button(action: {
+                // Action to perform when the button is tapped
+            })
+            {
+                // Ellipse 14
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: 3, height: 3)
+                
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: 3, height: 3)
+                
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: 3, height: 3)
+                
+            }
             // Rectangle 16
             Rectangle()
                 .fill(Color.clear)
-                .frame(width: 20, height: 20)
+                .frame(width: 1, height: 1)
             
             
-            Text("Send")
-                .font(.custom("Inter Regular", size:20))
-                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-                .tracking(0.33)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 14)
-                .background(RoundedRectangle(cornerRadius: 8)
-                                .fill(Color.blue))
+            Button(action: {
+                // Action to perform when the button is tapped
+            }) {
+                Text("Send")
+                    .font(.custom("Inter Regular", size: 20))
+                    .foregroundColor(Color.white)
+                    .tracking(0.33)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 6)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.blue))
+            }
+
         }
     }
 }
