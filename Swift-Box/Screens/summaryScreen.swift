@@ -6,8 +6,19 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct summaryScreen: View {
+    
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @StateObject  var mailDataViewModel = MailDataViewModel(baseUrl: ScopeStore().profile)
+    
+    @StateObject var aiViewModel = OpenAIViewModel()
+    
+    private var user: GIDGoogleUser? {
+      return GIDSignIn.sharedInstance.currentUser
+    }
+    
     var body: some View {
         
         ZStack {
@@ -61,17 +72,11 @@ struct summaryScreen: View {
                             Text("Today,").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).padding(.leading, 6.0)
                                 .offset(x: 2,y:1)
                             
-                            
-                            NavigationLink(destination: RelatedMailScreen()) {
-                                summaryView()
+//                            for email in mailDataViewModel.emails {
+//                                aiViewModel.sendMessage(currentInput: email)
+//                            }
                             }
-                            summaryView()
-                            summaryView()
-                            summaryView()
-                            summaryView()
-                            summaryView()
-                            summaryView()
-                            summaryView()
+
                         }
                         .padding(.all)
                         
@@ -83,11 +88,25 @@ struct summaryScreen: View {
                 
             }
             
+            .onAppear {
+                guard self.mailDataViewModel.data != nil else {
+                    if !self.authViewModel.hasMailScope {
+                        self.authViewModel.addMailScope {
+                            mailDataViewModel.fetchMail()
+                        }
+                    } else {
+                        self.mailDataViewModel.fetchMail()
+                    }
+                    return
+                }
+            }
+            
         }
-        .navigationBarHidden(true)
     }
-}
+
+
 
 #Preview {
     summaryScreen()
+        .environmentObject(AuthenticationViewModel())
 }

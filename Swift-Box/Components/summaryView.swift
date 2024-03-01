@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct summaryView: View {
+    var summary: Message
     var body: some View {
         
         ZStack {
@@ -24,7 +25,9 @@ struct summaryView: View {
                 Spacer()
                 
                 //Team member seeks an exten...
-                Text("Team member seeks an extension due to unforeseen challenges. Need more things to be done.").font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).opacity(0.6)
+                Text(summary.content).font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).opacity(0.6)
+                    .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                    .truncationMode(.tail)
                 
                 Spacer()
                 
@@ -59,6 +62,6 @@ struct summaryView: View {
     }
 }
 
-#Preview {
-    summaryView()
-}
+//#Preview {
+//    summaryView()
+//}

@@ -37,6 +37,11 @@
 		47925A632B8C7E55003A47B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47925A622B8C7E55003A47B6 /* SettingsView.swift */; };
 		47C546272B4C6D5A0049DCD2 /* back.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C546262B4C6D5A0049DCD2 /* back.swift */; };
 		47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C546282B4C6DF80049DCD2 /* senderView.swift */; };
+		47E5EF1C2B91E0BE001ACED5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 47E5EF1B2B91E0BE001ACED5 /* Alamofire */; };
+		47E5EF1E2B91E163001ACED5 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5EF1D2B91E163001ACED5 /* OpenAIService.swift */; };
+		47E5EF202B91E193001ACED5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5EF1F2B91E193001ACED5 /* Constants.swift */; };
+		47E5EF222B91E231001ACED5 /* OpenAIResponseMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5EF212B91E231001ACED5 /* OpenAIResponseMail.swift */; };
+		47E5EF242B91E332001ACED5 /* OpenAIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E5EF232B91E332001ACED5 /* OpenAIViewModel.swift */; };
 		7F3ED3C82B508CDF001A367B /* voiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3ED3C72B508CDF001A367B /* voiceButton.swift */; };
 		7F68D0482B870D2200367F77 /* againstreply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68D0472B870D2200367F77 /* againstreply.swift */; };
 		7F68D04A2B870D4500367F77 /* brief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F68D0492B870D4500367F77 /* brief.swift */; };
@@ -92,6 +97,10 @@
 		47925A622B8C7E55003A47B6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		47C546262B4C6D5A0049DCD2 /* back.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = back.swift; sourceTree = "<group>"; };
 		47C546282B4C6DF80049DCD2 /* senderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senderView.swift; sourceTree = "<group>"; };
+		47E5EF1D2B91E163001ACED5 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		47E5EF1F2B91E193001ACED5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		47E5EF212B91E231001ACED5 /* OpenAIResponseMail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponseMail.swift; sourceTree = "<group>"; };
+		47E5EF232B91E332001ACED5 /* OpenAIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIViewModel.swift; sourceTree = "<group>"; };
 		7F3ED3C72B508CDF001A367B /* voiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceButton.swift; sourceTree = "<group>"; };
 		7F68D0472B870D2200367F77 /* againstreply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = againstreply.swift; sourceTree = "<group>"; };
 		7F68D0492B870D4500367F77 /* brief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brief.swift; sourceTree = "<group>"; };
@@ -119,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E5EF1C2B91E0BE001ACED5 /* Alamofire in Frameworks */,
 				7F729C322B57F465001E79A2 /* GoogleSignIn in Frameworks */,
 				7F729C342B57F465001E79A2 /* GoogleSignInSwift in Frameworks */,
 			);
@@ -147,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				7F729C352B57F4D7001E79A2 /* credentials.plist */,
+				47E5EF1F2B91E193001ACED5 /* Constants.swift */,
 			);
 			path = GoogleCredentials;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 				17BD69952B71865300F6967F /* MailResponseStructure.swift */,
 				170843BA2B808C6A00149692 /* StructureList.swift */,
 				170843B82B8067AB00149692 /* ScopeStore.swift */,
+				47E5EF212B91E231001ACED5 /* OpenAIResponseMail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +255,7 @@
 			children = (
 				7F729C382B57FCBD001E79A2 /* AuthenticationViewModel.swift */,
 				17BD69982B71947F00F6967F /* MailDataViewModel.swift */,
+				47E5EF232B91E332001ACED5 /* OpenAIViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,6 +265,7 @@
 			children = (
 				7F729C3B2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift */,
 				7FA4FB362B5988DF00B7A642 /* MailLoader.swift */,
+				47E5EF1D2B91E163001ACED5 /* OpenAIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,6 +289,7 @@
 			packageProductDependencies = (
 				7F729C312B57F465001E79A2 /* GoogleSignIn */,
 				7F729C332B57F465001E79A2 /* GoogleSignInSwift */,
+				47E5EF1B2B91E0BE001ACED5 /* Alamofire */,
 			);
 			productName = "Swift-Box";
 			productReference = 1768B02C2B431C6700C0CAD2 /* Swift-Box.app */;
@@ -306,6 +321,7 @@
 			mainGroup = 1768B0232B431C6700C0CAD2;
 			packageReferences = (
 				7F729C302B57F465001E79A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				47E5EF1A2B91E0BE001ACED5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 1768B02D2B431C6700C0CAD2 /* Products */;
 			projectDirPath = "";
@@ -342,6 +358,7 @@
 				170843BB2B808C6A00149692 /* StructureList.swift in Sources */,
 				84B6B5D52B504D14002826AC /* RelatedMailScreen.swift in Sources */,
 				47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */,
+				47E5EF1E2B91E163001ACED5 /* OpenAIService.swift in Sources */,
 				17C4C76B2B44AEDD00B0641D /* voiceMail.swift in Sources */,
 				47925A632B8C7E55003A47B6 /* SettingsView.swift in Sources */,
 				7F68D0482B870D2200367F77 /* againstreply.swift in Sources */,
@@ -356,9 +373,12 @@
 				7F68D05C2B8711EC00367F77 /* worktabview.swift in Sources */,
 				7F729C392B57FCBD001E79A2 /* AuthenticationViewModel.swift in Sources */,
 				1768B0322B431C6700C0CAD2 /* ContentView.swift in Sources */,
+				47E5EF202B91E193001ACED5 /* Constants.swift in Sources */,
 				84A718962B5069FA00D095F8 /* Related_Mails.swift in Sources */,
 				7F68D0502B870DB200367F77 /* google.swift in Sources */,
+				47E5EF242B91E332001ACED5 /* OpenAIViewModel.swift in Sources */,
 				170843B92B8067AB00149692 /* ScopeStore.swift in Sources */,
+				47E5EF222B91E231001ACED5 /* OpenAIResponseMail.swift in Sources */,
 				17BD69962B71865300F6967F /* MailResponseStructure.swift in Sources */,
 				7F68D0622B8712D500367F77 /* composemail.swift in Sources */,
 				1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */,
@@ -587,6 +607,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		47E5EF1A2B91E0BE001ACED5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 		7F729C302B57F465001E79A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -598,6 +626,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		47E5EF1B2B91E0BE001ACED5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47E5EF1A2B91E0BE001ACED5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		7F729C312B57F465001E79A2 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F729C302B57F465001E79A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
