@@ -1,10 +1,3 @@
-//
-//  mailView.swift
-//  Swift-Box
-//
-//  Created by Subha on 01/01/24.
-//
-
 import SwiftUI
 
 struct mailView: View {
@@ -14,16 +7,17 @@ struct mailView: View {
         HStack{
             
             ZStack{
-                //Rectangle 3
-                Image(uiImage: #imageLiteral(resourceName: "mailPic"))
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
+                // Profile photo displaying the first alphabet of the sender's email address
+                Text(getFirstLetter(email: email))
+                    .font(.custom("Arial Bold", size: 32))
+                    .foregroundColor(Color.white)
                     .frame(width: 66, height: 66)
+                    .background(Color.gray)
                     .clipShape(RoundedRectangle(cornerRadius: 17.24))
                     .frame(width: 66.0, height: 66.0)
                 
-                notificationDot(count: 4)
-                    .padding([.leading, .bottom], 55.0)
+                //notificationDot(count: 4)
+                  //  .padding([.leading, .bottom], 55.0)
                 
             }
             VStack(alignment: .leading) {
@@ -65,6 +59,19 @@ struct mailView: View {
             }
             .padding(.leading, 5)
             
+        }
+    }
+    
+    // Function to get the first letter of the sender's email address
+    private func getFirstLetter(email: MessageStructure) -> String {
+        guard let from = email.payload.headers.first(where: { $0.name == "From" })?.value else {
+            return "?"
+        }
+        let components = from.components(separatedBy: "@")
+        if let firstChar = components.first?.first {
+            return String(firstChar).uppercased()
+        } else {
+            return "?"
         }
     }
     
@@ -115,7 +122,3 @@ struct mailView: View {
         return "Invalid Date"
     }
 }
-
-//#Preview {
-//    mailView()
-//}
