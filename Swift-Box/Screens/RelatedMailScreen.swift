@@ -29,9 +29,9 @@ struct RelatedMailScreen: View {
                             
                             
                             VStack{
-                                senderView(senderName: "Enrique Gram", user: "Mohit")
-                                    .padding(.leading, -120.0).frame(width: 390, height: 205)
-                                    .offset(y : -10)
+                             //   senderView(senderName: "Enrique Gram", user: "Mohit")
+                             //       .padding(.leading, -120.0).frame(width: 390, height: 205)
+                             //       .offset(y : -10)
                                 //Articles about flat Earth theory.
                                 Text("Articles about flat Earth\ntheory.").font(.custom("Arial Bold", size: 26.1)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).tracking(1.7).lineSpacing(6)
                                     .offset(y:-60)

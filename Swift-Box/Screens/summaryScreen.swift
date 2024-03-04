@@ -67,7 +67,7 @@ struct summaryScreen: View {
                         //Rectangle 2
                         RoundedRectangle(cornerRadius: 27)
                             .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
-                            .frame(height: (100 + CGFloat((mailDataViewModel.summaryEmail.count*80))))
+                            .frame(height: (100 + CGFloat((mailDataViewModel.summaryEmail.count*110))))
                             .offset(y:-5)
                         
                         VStack(alignment: .leading) {
@@ -75,7 +75,7 @@ struct summaryScreen: View {
                             Text("Today,").font(.custom("Arial Bold", size: 27.4)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).padding(.leading, 6.0)
                                 .offset(x: 2,y:1)
                             
-                            ForEach(self.mailDataViewModel.summaryEmail) { email in
+                            ForEach(Array(self.mailDataViewModel.summaryEmail)) { email in
                                 NavigationLink {
                                     RelatedMailScreen()
                                 } label: {
@@ -102,6 +102,11 @@ struct summaryScreen: View {
                         return
                     }
                 }
+                .padding(.bottom)
+                
+                if let _ = self.mailDataViewModel.data {
+                    Text(mailDataViewModel.data?.emailAddress ?? "No Email")
+                } else { Text("No User Signed In") }
                 
             }
             .navigationBarHidden(true)

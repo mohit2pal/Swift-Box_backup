@@ -84,7 +84,7 @@ final class MailDataViewModel: ObservableObject {
                     publisher.sink {completion in
                         switch completion {
                         case .finished:
-                            break
+                            self.decodeEmails()
                         case .failure(let error):
                             print("Error retrieving message: \(error)")
                         }
@@ -104,7 +104,6 @@ final class MailDataViewModel: ObservableObject {
         
         if let _ = self.message {
             self.emails.append(message!)
-            self.decodeEmails()
         } else {print("No Email")}
     }
     
@@ -114,7 +113,7 @@ final class MailDataViewModel: ObservableObject {
                 if let bodyData = email.payload.body.data {
                     // If email body is in the main body
                     if let decodedString = decoder.decodeBase64String(bodyData) {
-                        self.decodedEmails.insert(EmailHTML(id: email.id, HTMLbody: decodedString, snippet: email.snippet, subject: subject(email: email)))
+                        self.decodedEmails.insert(EmailHTML(id: email.id, HTMLbody: decodedString, snippet: email.snippet, subject: subject(email: email), sender: sender(email: email)))
                     } else {
                         print("Failed to convert email with id: \(email.id)")
                     }
@@ -124,7 +123,7 @@ final class MailDataViewModel: ObservableObject {
                         if let partData = part.body.data {
                             if let decodedString = decoder.decodeBase64String(partData) {
                                 if part.partId == "1" {
-                                    self.decodedEmails.insert(EmailHTML(id: email.id, HTMLbody: decodedString, snippet: email.snippet, subject: subject(email: email)))
+                                    self.decodedEmails.insert(EmailHTML(id: email.id, HTMLbody: decodedString, snippet: email.snippet, subject: subject(email: email), sender: sender(email: email)))
                                 }
                             } else {
                                 print("Failed to convert email part with id: \(part.partId)")
@@ -141,7 +140,9 @@ final class MailDataViewModel: ObservableObject {
     
     func fetchSummary() {
         
-        for data in decodedEmails {
+        let decodedEmailsArray = Array(decodedEmails)
+        
+        for data in decodedEmailsArray {
             let newMessage = Message( role: .user, content: decoder.removeHTMLTags(from: data.HTMLbody), createAt: Date())
             messages.append(newMessage)
             
@@ -154,11 +155,11 @@ final class MailDataViewModel: ObservableObject {
                 }
                 let receivedMessage = Message( role: receivedOpenAIMessage.role, content: receivedOpenAIMessage.content, createAt: Date())
                 await MainActor.run{
-                    messages.append(receivedMessage)
+                    let summarisedEmail = SummaryData(id: data.id, HTMLbody: data.HTMLbody, snippet: data.snippet, subject: data.subject, summary: receivedMessage.content, sender: data.sender)
                     
-                    summaryEmail.append(SummaryData(id: data.id, HTMLbody: data.HTMLbody, snippet: data.snippet, subject: data.subject, summary: receivedMessage.content))
-                    
-                    print(summaryEmail)
+                    if !summaryEmail.contains(summarisedEmail) {
+                        summaryEmail.append(summarisedEmail)
+                    }
                 }
             }
             
@@ -173,6 +174,17 @@ final class MailDataViewModel: ObservableObject {
             }
         }
         return "Invalid Header"
+    }
+    
+    func sender(email: MessageStructure) -> String {
+        for header in email.payload.headers {
+            if header.name == "From" {
+               let components = header.value.components(separatedBy: "<")
+                
+                return components[0]
+            }
+        }
+        return "Invalid Sender"
     }
 
     

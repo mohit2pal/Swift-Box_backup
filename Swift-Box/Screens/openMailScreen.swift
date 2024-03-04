@@ -25,13 +25,13 @@ struct openMailScreen: View {
                             .frame(width: 390, height: 140)
                         
                         VStack(alignment: .leading) {
-                            senderView(senderName: from, user: to)
+                            senderView(senderName: from, user: to, email: email)
                             
                         }.padding(.leading, -50).frame(width: 390, height: 205)
                     }
                     
                     WebView(htmlString: htmlString)
-                                .frame(height: 5000)
+                        .frame(height: 5000)
                     
                 }
             }
@@ -98,10 +98,20 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.loadHTMLString(htmlString, baseURL: nil)
+        let customCSS = """
+            <style>
+                body {
+                    filter: invert(1);
+                }
+                img, iframe, video {
+                    filter: invert(1);
+                }
+            </style>
+        """
+        let styledHTMLString = "\(customCSS)\(htmlString)"
+        uiView.loadHTMLString(styledHTMLString, baseURL: nil)
     }
 }
-
 //
 //#Preview {
 //    openMailScreen()
