@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		170843B92B8067AB00149692 /* ScopeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170843B82B8067AB00149692 /* ScopeStore.swift */; };
-		170843BB2B808C6A00149692 /* StructureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170843BA2B808C6A00149692 /* StructureList.swift */; };
 		170935682B438ECA006D339D /* personalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170935672B438ECA006D339D /* personalScreen.swift */; };
 		1709356B2B438F7D006D339D /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709356A2B438F7D006D339D /* loginScreen.swift */; };
 		1709356D2B438FF8006D339D /* accountInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709356C2B438FF8006D339D /* accountInputField.swift */; };
 		170935712B4392C7006D339D /* loginButttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170935702B4392C7006D339D /* loginButttons.swift */; };
 		17104A512B43699B00E61F75 /* newDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17104A502B43699B00E61F75 /* newDivider.swift */; };
 		17104A532B437C1000E61F75 /* notificationDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17104A522B437C1000E61F75 /* notificationDot.swift */; };
+		171634BF2B948E5600336F0E /* OpenAIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171634BE2B948E5600336F0E /* OpenAIServices.swift */; };
+		171634C42B94A9C800336F0E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 171634C32B94A9C800336F0E /* Alamofire */; };
+		171634C62B94EFE100336F0E /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171634C52B94EFE100336F0E /* Decoder.swift */; };
+		171634C92B95B41D00336F0E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 171634C82B95B41D00336F0E /* SwiftSoup */; };
 		1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */; };
 		1768B0322B431C6700C0CAD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B0312B431C6700C0CAD2 /* ContentView.swift */; };
 		1768B0342B431C6800C0CAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768B0332B431C6800C0CAD2 /* Assets.xcassets */; };
@@ -62,13 +65,14 @@
 
 /* Begin PBXFileReference section */
 		170843B82B8067AB00149692 /* ScopeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopeStore.swift; sourceTree = "<group>"; };
-		170843BA2B808C6A00149692 /* StructureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureList.swift; sourceTree = "<group>"; };
 		170935672B438ECA006D339D /* personalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalScreen.swift; sourceTree = "<group>"; };
 		1709356A2B438F7D006D339D /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		1709356C2B438FF8006D339D /* accountInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountInputField.swift; sourceTree = "<group>"; };
 		170935702B4392C7006D339D /* loginButttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginButttons.swift; sourceTree = "<group>"; };
 		17104A502B43699B00E61F75 /* newDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newDivider.swift; sourceTree = "<group>"; };
 		17104A522B437C1000E61F75 /* notificationDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationDot.swift; sourceTree = "<group>"; };
+		171634BE2B948E5600336F0E /* OpenAIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIServices.swift; sourceTree = "<group>"; };
+		171634C52B94EFE100336F0E /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		1768B02C2B431C6700C0CAD2 /* Swift-Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BoxApp.swift; sourceTree = "<group>"; };
 		1768B0312B431C6700C0CAD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				171634C42B94A9C800336F0E /* Alamofire in Frameworks */,
+				171634C92B95B41D00336F0E /* SwiftSoup in Frameworks */,
 				7F729C322B57F465001E79A2 /* GoogleSignIn in Frameworks */,
 				7F729C342B57F465001E79A2 /* GoogleSignInSwift in Frameworks */,
 			);
@@ -232,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				17BD69952B71865300F6967F /* MailResponseStructure.swift */,
-				170843BA2B808C6A00149692 /* StructureList.swift */,
 				170843B82B8067AB00149692 /* ScopeStore.swift */,
 			);
 			path = Model;
@@ -252,6 +257,8 @@
 			children = (
 				7F729C3B2B57FD83001E79A2 /* GoogleSignInAuthenticator.swift */,
 				7FA4FB362B5988DF00B7A642 /* MailLoader.swift */,
+				171634BE2B948E5600336F0E /* OpenAIServices.swift */,
+				171634C52B94EFE100336F0E /* Decoder.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,6 +282,8 @@
 			packageProductDependencies = (
 				7F729C312B57F465001E79A2 /* GoogleSignIn */,
 				7F729C332B57F465001E79A2 /* GoogleSignInSwift */,
+				171634C32B94A9C800336F0E /* Alamofire */,
+				171634C82B95B41D00336F0E /* SwiftSoup */,
 			);
 			productName = "Swift-Box";
 			productReference = 1768B02C2B431C6700C0CAD2 /* Swift-Box.app */;
@@ -306,6 +315,8 @@
 			mainGroup = 1768B0232B431C6700C0CAD2;
 			packageReferences = (
 				7F729C302B57F465001E79A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				171634C22B94A9C800336F0E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				171634C72B95B41D00336F0E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 1768B02D2B431C6700C0CAD2 /* Products */;
 			projectDirPath = "";
@@ -339,7 +350,6 @@
 				17104A512B43699B00E61F75 /* newDivider.swift in Sources */,
 				7F68D0582B870E9C00367F77 /* summarytabview.swift in Sources */,
 				17BD69992B71947F00F6967F /* MailDataViewModel.swift in Sources */,
-				170843BB2B808C6A00149692 /* StructureList.swift in Sources */,
 				84B6B5D52B504D14002826AC /* RelatedMailScreen.swift in Sources */,
 				47C546292B4C6DF80049DCD2 /* senderView.swift in Sources */,
 				17C4C76B2B44AEDD00B0641D /* voiceMail.swift in Sources */,
@@ -360,6 +370,7 @@
 				7F68D0502B870DB200367F77 /* google.swift in Sources */,
 				170843B92B8067AB00149692 /* ScopeStore.swift in Sources */,
 				17BD69962B71865300F6967F /* MailResponseStructure.swift in Sources */,
+				171634C62B94EFE100336F0E /* Decoder.swift in Sources */,
 				7F68D0622B8712D500367F77 /* composemail.swift in Sources */,
 				1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */,
 				17C4C7692B44AD4C00B0641D /* voiceButtons.swift in Sources */,
@@ -372,6 +383,7 @@
 				1709356B2B438F7D006D339D /* loginScreen.swift in Sources */,
 				1709356D2B438FF8006D339D /* accountInputField.swift in Sources */,
 				1768B0422B431F4C00C0CAD2 /* setting_back.swift in Sources */,
+				171634BF2B948E5600336F0E /* OpenAIServices.swift in Sources */,
 				1768B04D2B43265000C0CAD2 /* mailView.swift in Sources */,
 				7F68D05A2B870ECD00367F77 /* WorkScreen.swift in Sources */,
 				7F68D0522B870E0200367F77 /* newmessage.swift in Sources */,
@@ -587,6 +599,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		171634C22B94A9C800336F0E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		171634C72B95B41D00336F0E /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		7F729C302B57F465001E79A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -598,6 +626,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		171634C32B94A9C800336F0E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 171634C22B94A9C800336F0E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		171634C82B95B41D00336F0E /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 171634C72B95B41D00336F0E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		7F729C312B57F465001E79A2 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F729C302B57F465001E79A2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;

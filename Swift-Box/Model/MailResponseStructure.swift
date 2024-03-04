@@ -85,6 +85,28 @@ struct Body: Codable {
     let size: Int
 }
 
+struct Message: Encodable {
+    let id = UUID()
+    let role: SenderRole
+    let content: String
+    let createAt: Date
+}
+
+struct EmailHTML: Identifiable, Hashable {
+    let id: String
+    let HTMLbody: String
+    let snippet: String
+    let subject: String
+}
+
+struct SummaryData: Identifiable {
+    let id: String
+    let HTMLbody: String
+    let snippet: String
+    let subject: String
+    let summary: String
+}
+
 extension MessegeListStructure {
     enum Error: Swift.Error {
         case noMailInResult

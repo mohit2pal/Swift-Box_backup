@@ -31,15 +31,19 @@ struct personalScreen: View {
                     
                     VStack(alignment: .leading) {
                         
-                        NavigationLink(destination: SettingsView()) {
-                            setting_back()
-                                .padding([.top, .leading, .trailing])
+                        HStack {
+                            
+                            profile_pic()
+                                .padding(.top)
+                                .padding(.leading, 25.0)
+                                .onTapGesture(perform: authViewModel.signOut)
+                            
+                            NavigationLink(destination: SettingsView()) {
+                                setting_back()
+                                    .padding([.top, .leading, .trailing])
+                            }
                         }
-                        profile_pic()
-                            .padding(.top)
-                            .padding(.leading, 25.0)
-                            .onTapGesture(perform: authViewModel.signOut)
-                        
+                    
                         
                         //All Inboxes
                         Text("All Inboxes").font(.custom("Arial Bold", size: 33.3)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).padding([.top, .leading]).tracking(-0.53).multilineTextAlignment(.center)
