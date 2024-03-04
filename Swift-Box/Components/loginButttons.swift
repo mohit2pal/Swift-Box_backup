@@ -8,23 +8,32 @@
 import SwiftUI
 
 struct loginButttons: View {
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
     var body: some View {
-        
-        HStack
-                {
-                    Image("Apple login")
-                    Spacer().frame(width: 50)
-                    Image("Google login")
-                    Spacer().frame(width: 50)
-                    Image("Facebook login")
-                    
-                    
-                                        
-                    
-                }
+        HStack {
+            Button {
+                //Apple Login Integration
+            } label: {
+                Image("Apple login")
+            }
+            Spacer().frame(width: 50)
+            
+            Button {
+                authViewModel.signIn()
+            } label: {
+                Image("Google login")
+            }
+            Spacer().frame(width: 50)
+            Button {
+                //Facebook Login Integration Why!
+            } label: {
+                Image("Facebook login")
+            }
+        }
     }
 }
 
 #Preview {
     loginButttons()
+        .environmentObject(AuthenticationViewModel())
 }

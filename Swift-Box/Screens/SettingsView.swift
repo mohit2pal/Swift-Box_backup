@@ -1,4 +1,5 @@
 import SwiftUI
+import GoogleSignIn
 
 struct SettingsView: View {
     @State private var autoreply = true
@@ -10,6 +11,12 @@ struct SettingsView: View {
     
     @State private var selectedTheme = 0
     let themes = ["Light", "Dark", "System"]
+    
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+    
+    private var user: GIDGoogleUser? {
+        return GIDSignIn.sharedInstance.currentUser
+    }
     
     var body: some View {
         NavigationView {
@@ -51,12 +58,12 @@ struct SettingsView: View {
                     Section(header: Text("ACCOUNT INFORMATION")) {
                         
                         HStack{//Title
-                            Text("Default Email").font(.system(size: 17, weight: .regular)).tracking(-0.4)
+                            Text("Email").font(.system(size: 17, weight: .regular)).tracking(-0.4)
                             
                             Spacer()
                             //Detail
                             //Detail
-                            Text("mohit2pal@gmail.com").font(.system(size: 17, weight: .regular)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8))).tracking(-0.4).multilineTextAlignment(.trailing)
+                            Text(user?.profile?.email ?? "No User Signed In").font(.system(size: 17, weight: .regular)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8))).tracking(-0.4).multilineTextAlignment(.trailing)
                             Image("arrowright")
                         }
                         
@@ -99,9 +106,9 @@ struct SettingsView: View {
                         
                         Section(header: Text("Account")) {
                             Button(action: {
-                                // Action for account settings
+                                authViewModel.signOut()
                             }) {
-                                Text("Manage Account")
+                                Text("Sign Out")
                             }
                         }
                     }
@@ -114,5 +121,6 @@ struct SettingsView: View {
     struct SettingsView_Previews: PreviewProvider {
         static var previews: some View {
             SettingsView()
+                .environmentObject(AuthenticationViewModel())
         }
     }
