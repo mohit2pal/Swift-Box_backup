@@ -28,7 +28,9 @@ struct summaryView: View {
                 Spacer()
                 
                 //Team member seeks an exten...
-                Text(email.summary).font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).opacity(0.6)
+                Text(email.summary).font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                    .multilineTextAlignment(.leading)
+                    .opacity(0.6)
                     .lineLimit(2)
                     .truncationMode(.tail)
                 

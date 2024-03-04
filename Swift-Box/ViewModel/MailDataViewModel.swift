@@ -149,7 +149,7 @@ final class MailDataViewModel: ObservableObject {
             Task {
                 let response = await openAIService.sendMessage(messages: messages)
                 guard let receivedOpenAIMessage = response?.choices.first?.message else{
-                    print("Had no received message")
+                    print("Had no received message.")
                     return
                 }
                 let receivedMessage = Message( role: receivedOpenAIMessage.role, content: receivedOpenAIMessage.content, createAt: Date())
