@@ -18,6 +18,7 @@
 		171634C42B94A9C800336F0E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 171634C32B94A9C800336F0E /* Alamofire */; };
 		171634C62B94EFE100336F0E /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171634C52B94EFE100336F0E /* Decoder.swift */; };
 		171634C92B95B41D00336F0E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 171634C82B95B41D00336F0E /* SwiftSoup */; };
+		1734AFA92B96671800141880 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734AFA82B96671800141880 /* constants.swift */; };
 		1768B0302B431C6700C0CAD2 /* Swift_BoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */; };
 		1768B0322B431C6700C0CAD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768B0312B431C6700C0CAD2 /* ContentView.swift */; };
 		1768B0342B431C6800C0CAD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1768B0332B431C6800C0CAD2 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		17104A522B437C1000E61F75 /* notificationDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationDot.swift; sourceTree = "<group>"; };
 		171634BE2B948E5600336F0E /* OpenAIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIServices.swift; sourceTree = "<group>"; };
 		171634C52B94EFE100336F0E /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		1734AFA82B96671800141880 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		1768B02C2B431C6700C0CAD2 /* Swift-Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BoxApp.swift; sourceTree = "<group>"; };
 		1768B0312B431C6700C0CAD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				1768B02F2B431C6700C0CAD2 /* Swift_BoxApp.swift */,
 				1768B0312B431C6700C0CAD2 /* ContentView.swift */,
+				1734AFA82B96671800141880 /* constants.swift */,
 				7F729C372B57F53F001E79A2 /* Info.plist */,
 				1768B0332B431C6800C0CAD2 /* Assets.xcassets */,
 				171E3EA02B7411880007629C /* GoogleCredentials */,
@@ -368,6 +371,7 @@
 				1768B0322B431C6700C0CAD2 /* ContentView.swift in Sources */,
 				84A718962B5069FA00D095F8 /* Related_Mails.swift in Sources */,
 				7F68D0502B870DB200367F77 /* google.swift in Sources */,
+				1734AFA92B96671800141880 /* constants.swift in Sources */,
 				170843B92B8067AB00149692 /* ScopeStore.swift in Sources */,
 				17BD69962B71865300F6967F /* MailResponseStructure.swift in Sources */,
 				171634C62B94EFE100336F0E /* Decoder.swift in Sources */,
