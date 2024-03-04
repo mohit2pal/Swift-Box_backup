@@ -10,6 +10,7 @@ import WebKit
 
 struct openMailScreen: View {
     var email: MessageStructure
+    var decoder = Decoder()
     
     var body: some View {
         ZStack {
@@ -24,34 +25,19 @@ struct openMailScreen: View {
                             .frame(width: 390, height: 140)
                         
                         VStack(alignment: .leading) {
-                            senderView(senderName: from, user: to)
+                            senderView(senderName: from, user: to, email: email)
                             
                         }.padding(.leading, -50).frame(width: 390, height: 205)
                     }
                     
-//                    if let decodedHTML = decodeBase64AndConvertToHTML(email.payload.body.data) {
-//                               HTMLView(htmlContent: decodedHTML)
-//                           } else {
-//                               Text("Failed to decode email content")
-//                                   .font(.title)
-//                           }
+                    WebView(htmlString: htmlString)
+                        .frame(height: 5000)
                     
-//                    //sender
-//                    Text("It’s HERE! NEW Deals new you! Come check out the excitement!").font(.custom("Arial Regular", size: 26.1)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-//                    
-//                    Image("Email").resizable()
-//                        .frame(width: 362, height: 1016.01)
                 }
             }
         }
     }
     
-    func decodeBase64AndConvertToHTML(_ base64EncodedString: String) -> String? {
-            guard let data = Data(base64Encoded: base64EncodedString) else {
-                return nil
-            }
-            return String(data: data, encoding: .utf8)
-        }
     
     var from: String {
         for header in email.payload.headers {
@@ -72,20 +58,60 @@ struct openMailScreen: View {
         }
         return "Invalid Reciever"
     }
+    
+    var htmlString: String {
+        
+        if let bodyData = email.payload.body.data {
+            // If email body is in the main body
+            if let decodedString = decoder.decodeBase64String(bodyData) {
+                return decodedString
+            } else {
+                print("Failed to convert email with id: \(email.id)")
+            }
+        } else if let parts = email.payload.parts {
+            // If email body is in different parts
+            for part in parts {
+                if let partData = part.body.data {
+                    if let decodedString = decoder.decodeBase64String(partData) {
+                        if part.partId == "1" {
+                            return decodedString
+                        }
+                    } else {
+                        print("Failed to convert email part with id: \(part.partId)")
+                    }
+                }
+            }
+        } else {
+            print("Email contains no Base64 Email Data.")
+        }
+        
+        return "Invalid Conversion"
+    }
 }
 
-struct HTMLView: UIViewRepresentable {
-    let htmlContent: String
-    
+struct WebView: UIViewRepresentable {
+    let htmlString: String
+
     func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
+        let webView = WKWebView()
+        return webView
     }
-    
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.loadHTMLString(htmlContent, baseURL: nil)
+        let customCSS = """
+            <style>
+                body {
+                    filter: invert(1);
+                }
+                img, iframe, video {
+                    filter: invert(1);
+                }
+            </style>
+        """
+        let styledHTMLString = "\(customCSS)\(htmlString)"
+        uiView.loadHTMLString(styledHTMLString, baseURL: nil)
     }
 }
-
 //
 //#Preview {
 //    openMailScreen()
