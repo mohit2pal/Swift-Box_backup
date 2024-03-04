@@ -44,7 +44,3 @@ struct OpenAIChatResponse: Decodable {
 struct OpenAIChatChoice: Decodable {
     let message: OpenAIChatMessage
 }
-
-enum Constants {
-    static let openAIAPikey="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"
-}
