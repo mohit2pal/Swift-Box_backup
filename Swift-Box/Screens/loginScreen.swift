@@ -42,15 +42,9 @@ struct loginScreen: View {
                                         
                                         Spacer().frame(height: 50)
                     
-                    NavigationLink(destination: personalScreen()){
+
                         loginButttons()
                         
-                    }
-                    
-                    Spacer()
-                    
-                    googleSignInButton()
-                        .padding(.horizontal)
                     Spacer()
                     
                     //Don’t have an account yet?

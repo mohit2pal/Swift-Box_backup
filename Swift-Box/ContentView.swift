@@ -16,7 +16,7 @@ struct ContentView: View {
             NavigationView {
                 switch authViewModel.state {
                 case .signedIn:
-                    personalScreen()
+                    DefaultScreen()
                 case.signedOut:
                     loginScreen()
                 }

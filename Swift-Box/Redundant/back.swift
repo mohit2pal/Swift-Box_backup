@@ -9,7 +9,7 @@ import SwiftUI
 
 struct back: View {
     var body: some View {
-        Image("Arrow")
+        Image("arrow")
     }
 }
 
