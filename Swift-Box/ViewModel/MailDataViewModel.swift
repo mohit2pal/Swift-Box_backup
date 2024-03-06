@@ -14,7 +14,7 @@ final class MailDataViewModel: ObservableObject {
     
     private var decoder = Decoder()
     
-    @Published var messages: [Message] = [Message(role: .system, content: "Whatever content is given to you, your work is to summarise it,and it should be done in exactly 10 words at all times even if user asks for more or content is very large and finally it should be a 10 word complete sentence that make sense", createAt: Date())]
+    @Published var messages: [Message] = [Message(role: .system, content: "Whatever content is given to you, your work is to summarise it,and it should be done in exactly 10 words at all times even if user asks for more or content is very large and finally it should be a 20 word complete sentence that make sense", createAt: Date())]
     
     private let openAIService = OpenAIServices()
     

@@ -26,7 +26,6 @@ struct RelatedMailScreen: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color(#colorLiteral(red: 0.1568627506494522, green: 0.16862745583057404, blue: 0.1921568661928177, alpha: 1)))
                                 .frame(width: 390, height: 250)
-                                .offset(y:-120)
                             //system / light / status ba...
                             
                             
@@ -41,15 +40,23 @@ struct RelatedMailScreen: View {
                                     .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                                     .truncationMode(.tail)
                                     .padding(.horizontal)
-                                
-                                Image("Lorem Ipsum").resizable()
-                                    .frame(width: 375, height: 180)
-                                    .offset(y:-40)
                             }
                         }
-                        voiceMail(email: summaryData)
-                            .padding(.bottom, 30.0)
-                            .padding(.horizontal)
+                        
+                        Text(summaryData.summary)
+                            .frame(width: 370, height: 200)
+                            .padding()
+                            .border(Color.clear, width: 1)
+                        
+                        NavigationLink {
+                            openMailScreen(email: email)
+                        } label: {
+                            voiceMail(email: summaryData)
+                                .padding(.bottom, 30.0)
+                                .padding(.horizontal)
+                        }
+
+                        
                         Button(action: {
                             showSplitSheet = true
                         }, label: {
