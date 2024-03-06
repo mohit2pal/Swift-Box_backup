@@ -56,14 +56,14 @@ struct voiceScreen: View {
                 
                 Spacer()
                 
-                voiceMail()
+//                voiceMail()
                     .padding(.bottom, 30.0)
                     .padding(.horizontal)
             }
         }
         .sheet(isPresented: $showSplitSheet,
                content: {
-            composemail()
+          //  composemail()
         })
     }
 }

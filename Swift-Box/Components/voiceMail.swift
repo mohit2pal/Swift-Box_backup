@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct voiceMail: View {
+    var email: SummaryData
     var body: some View {
         
         ZStack {
@@ -22,19 +24,25 @@ struct voiceMail: View {
                 VStack(alignment: .leading) {
                     
                     //Flat Earth theory is a rea...
-                    Text("Flat Earth theory is a real thing. Don’t believe the...").font(.custom("Arial Bold", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                    Text(email.subject).font(.custom("Arial Bold", size: 14)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
                     
                     Spacer()
                     
                     //The reason behind why this...
-                    Text("The reason behind why this theory was hidden for so many years..").font(.custom("Arial Regular", size: 11)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).lineSpacing(10)
+                    Text(email.snippet).font(.custom("Arial Regular", size: 11)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).lineSpacing(10)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
                     
                     Spacer()
                     
                     HStack {
                         
                         //Chpsen
-                        Text("Chpsen").font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).opacity(0.4)
+                        Text(email.sender).font(.custom("Arial Regular", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).opacity(0.4)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
                         
                         Spacer()
                         
@@ -47,8 +55,7 @@ struct voiceMail: View {
                 .padding(.trailing)
                 
                 //Rectangle 16
-                Image(uiImage: #imageLiteral(resourceName: "Rectangle_16"))
-                    .resizable()
+                WebView(htmlString: email.HTMLbody)
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 121.4, height: 82.1)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -61,6 +68,6 @@ struct voiceMail: View {
     }
 }
 
-#Preview {
-    voiceMail()
-}
+//#Preview {
+//    voiceMail()
+//}

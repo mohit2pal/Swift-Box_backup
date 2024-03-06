@@ -35,7 +35,9 @@ struct summaryScreen: View {
                     
                     ForEach(Array(self.mailDataViewModel.summaryEmail)) { email in
                         NavigationLink {
-                            RelatedMailScreen()
+                            if let theMessageStructure = findMessageStructure(for: email){
+                                RelatedMailScreen(email: theMessageStructure, summaryData: email)
+                            }
                         } label: {
                             summaryView(email: email)
                         }
@@ -62,6 +64,10 @@ struct summaryScreen: View {
         .padding(.bottom)
         
         
+    }
+    
+    func findMessageStructure(for summaryData: SummaryData) -> MessageStructure? {
+        return mailDataViewModel.emails.first { $0.id == summaryData.id }
     }
 }
 

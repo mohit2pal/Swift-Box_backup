@@ -10,6 +10,12 @@ import SwiftSoup
 
 final class Decoder: ObservableObject {
     
+    @Published var messages: [Message] = [Message(role: .system, content: "Whatever content is given to you, you have to generate two seperate polar replies to it, like if it is a mail about a proposal, create a proposal acceptance draft and a Proposal restructuring draft, and generate two seperate messages for each response", createAt: Date())]
+    
+    private let openAIService = OpenAIServices()
+    
+    @Published var generatedResponse: String = ""
+    
     func decodeBase64String(_ base64String: String) -> String? {
         // Step 1: Pad the base64 string if needed
         var paddedBase64 = base64String
@@ -51,6 +57,35 @@ final class Decoder: ObservableObject {
                 print("Error while removing HTML and CSS: \(error.localizedDescription)")
                 return htmlString
             }
+    }
+    
+    func fetchResponse(for HTML: String, responseType: ResponseType){
+        let newMessage = Message( role: .user, content: removeHTMLTags(from: HTML), createAt: Date())
+        messages.append(newMessage)
+        
+        Task {
+            let response = await openAIService.sendMessage(messages: messages)
+            guard let receivedOpenAIMessage = response?.choices.first?.message else{
+                print("Had no received message.")
+                return
+            }
+            _ = Message( role: receivedOpenAIMessage.role, content: receivedOpenAIMessage.content, createAt: Date())
+            await MainActor.run{
+                let parts = receivedOpenAIMessage.content.components(separatedBy: "---")
+                
+                switch responseType {
+                case .acceptance:
+                    generatedResponse = parts[0].trimmingCharacters(in: .whitespacesAndNewlines)
+                case.restructuring:
+                    generatedResponse = parts[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                }
+                }
+            }
+        }
+    
+    enum ResponseType {
+        case acceptance
+        case restructuring
     }
 
 }

@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct composemail: View {
-    @State private var toRecipient: String = ""
-    @State private var ccBccRecipient: String = ""
-    @State private var fromSender: String = ""
-    @State private var subject: String = ""
-    @State private var message: String = ""
+    @State var toRecipient: String
+    @State var ccBccRecipient: String = ""
+    @State var fromSender: String
+    @State var subject: String
+    @State var message: String = ""
     @State var showSplitSheet: Bool = false
-
     
+    var email: SummaryData
+    
+    @ObservedObject var decoder = Decoder()
+
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
@@ -29,15 +32,15 @@ struct composemail: View {
                         
                         Button(action: {
                                                     // Action to add recipient
-                                                }) {
-                                                    Image(systemName: "plus.circle.fill")
-                                                        .foregroundColor(.blue)
-                                                        .imageScale(.large)
-                                                }
+                        }) {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(.blue)
+                                .imageScale(.large)
+                        }
                     }
                     Divider()
                     HStack{
-                        Text("Cc/Bcc, From:")
+                        Text("Cc/Bcc:")
                         TextField("Cc/Bcc", text: $ccBccRecipient)
                             .background(Color.clear) // Set background color to clear
 
@@ -60,8 +63,8 @@ struct composemail: View {
                     .padding(.top, 10)
                     .padding(.bottom, 5)
                 
-                TextEditor(text: $message)
-                    .frame(minWidth: 10, maxWidth: 100, minHeight: 200)
+                TextEditor(text: $decoder.generatedResponse)
+                    .frame(minWidth: 10, maxWidth: 390, minHeight: 200)
                     .padding()
                     .border(Color.clear, width: 1)
                 
@@ -69,34 +72,33 @@ struct composemail: View {
                 
                 HStack {
                     Spacer()
-                                    Button(action: {
-                                        // Action for the first button
-                                    }) {
-                                        Text(" For        ")
-                                            .padding(.horizontal)
-                                            .padding(.vertical, 8)
-                                            .font(.system(size: 14))
-                                            .foregroundColor(.white)
-                                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray))
-                                    }
-                                    
-                                    Button(action: {
-                                        // Action for the second button
-                                    }) {
-                                        Text(" Against ")
-                                            .padding(.horizontal)
-                                            .padding(.vertical, 8)
-                                            .font(.system(size: 14))
-                                            .foregroundColor(.white)
-                                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray))
-                                    }
+                    Button(action: {
+                        
+                        decoder.fetchResponse(for: email.HTMLbody, responseType: .acceptance)
+                        
+                    }) {
+                        Text(" Acceptance   ")
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray))
+                    }
                     
-                    
-                  
+                    Button(action: {
+                        decoder.fetchResponse(for: email.HTMLbody, responseType: .restructuring)
+                    }) {
+                        Text(" Restructuring ")
+                            .padding(.horizontal)
+                            .padding(.vertical, 8)
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray))
+                    }
                     
                     Spacer()
-                                }
-                                .padding(.bottom)
+                }
+                .padding(.bottom)
                 
                 
             }
@@ -133,8 +135,8 @@ struct composemail: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        composemail()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        composemail()
+//    }
+//}

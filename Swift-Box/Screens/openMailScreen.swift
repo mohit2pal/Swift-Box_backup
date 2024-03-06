@@ -101,10 +101,10 @@ struct WebView: UIViewRepresentable {
         let customCSS = """
             <style>
                 body {
-                    filter: invert(1);
+                    filter: invert(0);
                 }
                 img, iframe, video {
-                    filter: invert(1);
+                    filter: invert(0);
                 }
             </style>
         """

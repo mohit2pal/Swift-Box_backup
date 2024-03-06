@@ -9,6 +9,9 @@ import SwiftUI
 
 struct RelatedMailScreen: View {
     @State var showSplitSheet: Bool = false
+    var email: MessageStructure
+    var summaryData: SummaryData
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -29,19 +32,22 @@ struct RelatedMailScreen: View {
                             
                             
                             VStack{
-                             //   senderView(senderName: "Enrique Gram", user: "Mohit")
-                             //       .padding(.leading, -120.0).frame(width: 390, height: 205)
-                             //       .offset(y : -10)
+                                senderView(senderName: from, user: to, email: email)
+                                    .padding(.leading, -50).frame(width: 390, height: 205)
+                                    .offset(y : -10)
                                 //Articles about flat Earth theory.
-                                Text("Articles about flat Earth\ntheory.").font(.custom("Arial Bold", size: 26.1)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).tracking(1.7).lineSpacing(6)
+                                Text(summaryData.subject).font(.custom("Arial Bold", size: 26.1)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.leading).tracking(1.7).lineSpacing(6)
                                     .offset(y:-60)
+                                    .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                                    .truncationMode(.tail)
+                                    .padding(.horizontal)
                                 
                                 Image("Lorem Ipsum").resizable()
                                     .frame(width: 375, height: 180)
                                     .offset(y:-40)
                             }
                         }
-                        voiceMail()
+                        voiceMail(email: summaryData)
                             .padding(.bottom, 30.0)
                             .padding(.horizontal)
                         Button(action: {
@@ -79,11 +85,31 @@ struct RelatedMailScreen: View {
             }
             .sheet(isPresented: $showSplitSheet,
                    content: {
-                composemail()
+                composemail(toRecipient: from, fromSender: to, subject: summaryData.subject, email: summaryData)
             })
         }
     }
+    
+    var from: String {
+        for header in email.payload.headers {
+            if header.name == "From" {
+               let components = header.value.components(separatedBy: "<")
+                
+                return components[0]
+            }
+        }
+        return "Invalid Sender"
+    }
+    
+    var to: String {
+        for header in email.payload.headers {
+            if header.name == "To" {
+                return header.value
+            }
+        }
+        return "Invalid Reciever"
+    }
 }
-#Preview {
-    RelatedMailScreen()
-}
+//#Preview {
+//    RelatedMailScreen()
+//}

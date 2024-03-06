@@ -33,18 +33,18 @@ final class GoogleSignInAuthenticator: ObservableObject {
                 return
             }
             
-            let user = signInResult.user
+//            let user = signInResult.user
             
-            let emailAddress = user.profile?.email
-            let fullName = user.profile?.name
-            let givenName = user.profile?.givenName
-            let familyName = user.profile?.familyName
-            
-            let profilePicURL = user.profile?.imageURL(withDimension: 320)
-            
-            let idToken = user.idToken
-            
-            print("Email Address: \(String(describing: emailAddress))\nFull Name: \(String(describing: fullName))\nFamily Name: \(String(describing: familyName))\nUser Token: \(String(describing: idToken))")
+//            let emailAddress = user.profile?.email
+//            let fullName = user.profile?.name
+//            let givenName = user.profile?.givenName
+//            let familyName = user.profile?.familyName
+//            
+//            let profilePicURL = user.profile?.imageURL(withDimension: 320)
+//            
+//            let idToken = user.idToken
+//            
+//            print("Email Address: \(String(describing: emailAddress))\nFull Name: \(String(describing: fullName))\nFamily Name: \(String(describing: familyName))\nUser Token: \(String(describing: idToken))")
             
             self.authViewModel.state = .signedIn(signInResult.user)
         }
